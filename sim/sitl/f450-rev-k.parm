@@ -1,0 +1,27 @@
+# f450-rev-k.parm — ArduCopter SITL F450 Quad-X overlay matching OPENFCF405 Rev K defaults
+# Status: candidate (SITL M4 simulation baseline — NEVER implies flight readiness)
+
+# --- Frame (F450 Quad-X) ---
+FRAME_CLASS 1
+FRAME_TYPE 1
+
+# --- 3S LiPo Simulated Battery & Failsafes (aligned with defaults.parm) ---
+BATT_MONITOR 4
+SIM_BATT_VOLTAGE 12.6
+BATT_LOW_VOLT 10.8
+BATT_CRT_VOLT 10.2
+BATT_FS_LOW_ACT 2
+BATT_FS_CRT_ACT 1
+
+# --- RC & Safety Failsafes ---
+ARMING_CHECK 1
+FS_THR_ENABLE 1
+FS_GCS_ENABLE 0
+
+# --- MAVLink2 Precision Landing (driven externally by esp32-cam / vision-replay) ---
+PLND_ENABLED 1
+PLND_TYPE 1
+PLND_STRICT 1
+PLND_ALT_MIN 0
+PLND_ALT_MAX 0
+SIM_PLD_ENABLE 0

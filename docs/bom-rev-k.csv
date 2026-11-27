@@ -1,0 +1,28 @@
+refdes,category,part_value,package_mount,qty,kicad_footprint,sheet,status,notes
+U1_P1,Header/Socket,2x15 Female Socket (2.54mm) WeAct STM32F405RGT6 Left,THT,1,Connector_PinSocket_2.54mm:PinSocket_2x15_P2.54mm_Vertical,Root,confirmed,Verify exact physical WeAct F405 header spacing ΔX and pin 1..30 before PCB freeze
+U1_P2,Header/Socket,2x15 Female Socket (2.54mm) WeAct STM32F405RGT6 Right,THT,1,Connector_PinSocket_2.54mm:PinSocket_2x15_P2.54mm_Vertical,Root,confirmed,Verify exact physical WeAct F405 header spacing ΔX and pin 1..30 before PCB freeze
+U2,Header/Socket,1x10 Female Socket (2.54mm) for MPU6500,THT,1,Connector_PinSocket_2.54mm:PinSocket_1x10_P2.54mm_Vertical,Sheet 3,confirmed,"1:+3V3 2:GND 3:PA5 4:PA7 5:NC 6:NC 7:PA6 8:PC4 9:PA4 10:GND"
+U3,Header/Socket,1x6 Female Socket (2.54mm) for BMP280,THT,1,Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical,Sheet 3,confirmed,"1:+3V3 2:GND 3:PA5 4:PA7 5:PB12 6:PA6"
+J_PWR1,Connector,JST-XH 2P Vertical (2.50mm),THT,1,Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,Sheet 2,confirmed,"1:+5V_COMP/+5V_UBEC, 2:GND (KiCad trailing-1 annotated refdes for J_PWR)"
+J_RC1,Connector,JST-XH 3P Vertical (2.50mm),THT,1,Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,Sheet 2,confirmed,"1:+5V_FC, 2:GND, 3:SBUS_IN (KiCad refdes for J_RC)"
+J_WIFI1,Connector,JST-XH 4P Vertical (2.50mm),THT,1,Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,Sheet 3,confirmed,"1:+5V_COMP, 2:GND, 3:PA9, 4:PA10 (KiCad refdes for J_WIFI)"
+J_CAM1,Connector,JST-XH 4P Vertical (2.50mm),THT,1,Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,Sheet 3,confirmed,"1:+5V_COMP, 2:GND, 3:PA2, 4:PA3 (KiCad refdes for J_CAM)"
+J_GPS1,Connector,JST-XH 6P Vertical (2.50mm),THT,1,Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical,Sheet 3,confirmed,"1:+5V_FC, 2:GND, 3:PC6, 4:PC7, 5:PB10, 6:PB11 (KiCad refdes for J_GPS)"
+J_ESC1,Connector,JST-XH 8P Vertical (2.50mm),THT,1,Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical,Sheet 1,confirmed,"1:GND, 2:VBAT_RAW, 3-6:ESC_M1..M4, 7:CURR_RAW, 8:NC (KiCad refdes for J_ESC)"
+JP_C1,Header/Socket,Pin Header 1x2 (2.54mm),THT,1,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,Sheet 1,confirmed,DEFAULT OPEN (PC0 current sense isolation; KiCad refdes for JP_C)
+J_TEST1,Header/Socket,Pin Header 1x6 (2.54mm),THT,1,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,Sheet 3,confirmed,"1:GND, 2:+5V_FC, 3:+3V3, 4:VBAT_ADC, 5:SBUS_MCU, 6:PWM_M1 (KiCad refdes for J_TEST)"
+R1-R4,Discrete,47R 1/4W,THT,4,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 1,confirmed,Series damping PB6..PB9 -> J_ESC.3..6
+R5-R8,Discrete,10k 1/4W,THT,4,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 1,confirmed,Pull-down PB6..PB9 -> GND (placed BEFORE R1..R4)
+R9-R10,Discrete,4.7k 1/4W,THT,2,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 3,confirmed,I2C2 SCL/SDA (PB10/PB11) pull-up to +3V3
+R12,Discrete,4.7k 1/4W,THT,1,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 2,confirmed,Series protection J_RC1.3 (external inverted SBUS carrier) -> PA1 (UART4_RX) — ADR-003
+R14,Discrete,4.7k 1/4W,THT,1,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 1,confirmed,Divider node -> VBAT_ADC (PA0) current-limit series resistor
+R15,Discrete,10k 1/4W,THT,1,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 1,confirmed,JP_C.2 -> CURR_ADC (PC0) series resistor
+R16,Discrete,220k 1% Metal Film 1/4W,THT,1,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 1,confirmed,VBAT_RAW -> divider node (top)
+R17,Discrete,18k 1% Metal Film 1/4W,THT,1,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,Sheet 1,confirmed,Divider node -> GND (bottom; MULT~13.22)
+C1-C2,Discrete,470uF 16V Electrolytic,THT,2,Capacitor_THT:CP_Radial_D8.0mm_P3.50mm,Sheet 2,confirmed,"C1 on +5V_UBEC (J_PWR.1), C2 on +5V_COMP"
+C3,Discrete,100nF Ceramic,THT,1,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,Sheet 1,confirmed,VBAT_ADC (PA0) RC filter cap to GND
+C4,Discrete,100nF Ceramic,THT,1,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,Sheet 3,confirmed,U2 (MPU6500) +3V3 decoupling cap to GND
+C5,Discrete,100nF Ceramic,THT,1,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,Sheet 3,confirmed,U3 (BMP280) +3V3 decoupling cap to GND
+C6,Discrete,100nF Ceramic,THT,1,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,Sheet 2,confirmed,+5V_FC rail decoupling cap (post D1)
+C7,Discrete,100nF Ceramic,THT,1,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,Sheet 2,confirmed,J_RC (+5V_FC) local decoupling cap
+D1,Discrete,1N5822 Schottky Diode (3A 40V),THT,1,Diode_THT:D_DO-201AD_P12.70mm_Horizontal,Sheet 2,confirmed,+5V_UBEC (Anode) -> +5V_FC (Cathode); blocks USB-C backfeed

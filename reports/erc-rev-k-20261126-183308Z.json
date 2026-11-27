@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-27T01:33:09",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/28881f3b-abef-4aa4-a01a-bc5aa0e4b1b5",
+            "violations": []
+        },
+        {
+            "path": "/Sheet 1 - Motor & ESC/",
+            "uuid_path": "/28881f3b-abef-4aa4-a01a-bc5aa0e4b1b5/ac3ae685-2845-4f83-8eab-65bfe9b27548",
+            "violations": []
+        },
+        {
+            "path": "/Sheet 2 - Power & SBUS/",
+            "uuid_path": "/28881f3b-abef-4aa4-a01a-bc5aa0e4b1b5/254c6e5a-287e-4cf0-9129-ebf19853df49",
+            "violations": []
+        },
+        {
+            "path": "/Sheet 3 - Sensors & Peripherals/",
+            "uuid_path": "/28881f3b-abef-4aa4-a01a-bc5aa0e4b1b5/9c4034b8-acf2-4000-a2d1-a7573c2a551b",
+            "violations": []
+        }
+    ],
+    "source": "open-fc-carrier.kicad_sch"
+}

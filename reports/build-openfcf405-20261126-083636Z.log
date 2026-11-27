@@ -1,0 +1,30 @@
+Setting top to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot 
+Setting out to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot/build 
+Autoconfiguration                        : enabled 
+Checking for program 'python'            : /Users/allah-computer/Research/open-fc/.venv/bin/python3 
+Checking for python version >= 3.6.9     : 3.14.6 
+Setting board to                         : OPENFCF405 
+Using toolchain                          : arm-none-eabi 
+Checking for 'g++' (C++ compiler)        : /opt/homebrew/bin/arm-none-eabi-g++ 
+Checking for 'gcc' (C compiler)          : /opt/homebrew/bin/arm-none-eabi-gcc 
+Checking for program 'arm-none-eabi-nm'  : /opt/homebrew/bin/arm-none-eabi-nm 
+Checking for c flags '-MMD'              : yes 
+Checking for cxx flags '-MMD'            : yes 
+CXX Compiler                             : g++ 16.2.0 
+/Users/allah-computer/Research/open-fc/firmware/ardupilot/Tools/ardupilotwaf/chibios.py:106: SyntaxWarning: "\P" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\P"? A raw string is also an option.
+  if not where_python or "\Python\Python" not in where_python or "python.exe" not in where_python:
+Checking for program 'make'              : /usr/bin/make 
+Checking for program 'arm-none-eabi-objcopy' : /opt/homebrew/bin/arm-none-eabi-objcopy 
+Adding environment OPTIMIZE -Os
+Including /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/include/minimize_features.inc
+Including /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/include/minimize_common.inc
+Removing HAL_MSP_GPS_ENABLED
+Setup for MCU STM32F405xx
+Default parameters path from hwdef: /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/OPENFCF405/defaults.parm
+Writing hwdef setup in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h
+Writing DMA map
+Error: Bootloader (./Tools/bootloaders/OPENFCF405_bl.bin) does not exist and AP_BOOTLOADER_FLASHING_ENABLED
+Please run: Tools/scripts/build_bootloaders.py OPENFCF405
+
+Failed to process hwdef.dat ret=1
+(complete log in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/config.log)

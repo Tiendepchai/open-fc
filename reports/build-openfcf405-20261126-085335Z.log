@@ -1,0 +1,124 @@
+--- Step 1/2: Bootloader (OPENFCF405) ---
+Setting top to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot 
+Setting out to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot/build 
+Autoconfiguration                        : enabled 
+Checking for program 'python'            : /Users/allah-computer/Research/open-fc/.venv/bin/python3 
+Checking for python version >= 3.6.9     : 3.14.6 
+Setting board to                         : OPENFCF405 
+Using toolchain                          : arm-none-eabi 
+Checking for 'g++' (C++ compiler)        : /opt/homebrew/bin/arm-none-eabi-g++ 
+Checking for 'gcc' (C compiler)          : /opt/homebrew/bin/arm-none-eabi-gcc 
+Checking for program 'arm-none-eabi-nm'  : /opt/homebrew/bin/arm-none-eabi-nm 
+Checking for c flags '-MMD'              : yes 
+Checking for cxx flags '-MMD'            : yes 
+CXX Compiler                             : g++ 16.2.0 
+Checking for program 'make'              : /var/folders/by/4fxym4x96_x1k0491t_ztch40000gp/T/tmp.SqRzwCewjF/make 
+Checking for program 'arm-none-eabi-objcopy' : /opt/homebrew/bin/arm-none-eabi-objcopy 
+Setup for MCU STM32F405xx
+Writing hwdef setup in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h
+Writing DMA map
+Setting up as bootloader
+No change in hwdef.h
+Generating ldscript.ld
+Checking for env.py
+env set ENABLE_DFU_BOOT=0
+env set PROCESS_STACK=0x1C00
+env set MAIN_STACK=0x600
+env set IOMCU_FW=0
+env set PERIPH_FW=0
+env set BOARD_FLASH_SIZE=1024
+env set EXT_FLASH_SIZE_MB=0
+env set INT_FLASH_PRIMARY=False
+env set ENABLE_CRASHDUMP=False
+env set CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard']
+env set CORTEX=cortex-m4
+env set APJ_BOARD_ID=9405
+env set APJ_BOARD_TYPE=STM32F405xx
+env set USBID=0x1209/0x5741
+env set FLASH_RESERVE_START_KB=0
+env set EXT_FLASH_RESERVE_START_KB=0
+env set FLASH_TOTAL=32768
+env set HAS_EXTERNAL_FLASH_SECTIONS=0
+env set CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4
+Enabling ChibiOS asserts                     : no 
+Disabling Watchdog                           : no 
+Enabling malloc guard                        : no 
+Enabling ChibiOS thread statistics           : no 
+Enabling -Werror                             : no 
+Checking for intelhex module:                : OK 
+Enabled OpenDroneID                          : no 
+Enabled firmware ID checking                 : no 
+GPS Debug Logging                            : no 
+Enabled custom controller                    : no 
+Checking for HAVE_CMATH_ISFINITE             : no 
+Checking for HAVE_CMATH_ISINF                : no 
+Checking for HAVE_CMATH_ISNAN                : no 
+Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE : no 
+Checking for NEED_CMATH_ISINF_STD_NAMESPACE    : no 
+Checking for NEED_CMATH_ISNAN_STD_NAMESPACE    : no 
+Checking for header endian.h                   : not found 
+Checking for header byteswap.h                 : not found 
+Checking for HAVE_MEMRCHR                      : no 
+Configured VSCode Intellisense:                : no 
+DC_DSDL compiler in                            : /Users/allah-computer/Research/open-fc/firmware/ardupilot/modules/DroneCAN/dronecan_dsdlc 
+Source is git repository                       : yes 
+Update submodules                              : no 
+Checking for program 'git'                     : /opt/homebrew/bin/git 
+Gtest                                          : STM32 boards currently don't support compiling gtest 
+Checking for program 'arm-none-eabi-size'      : /opt/homebrew/bin/arm-none-eabi-size 
+Benchmarks                                     : disabled 
+Unit tests                                     : disabled 
+Scripting                                      : disabled 
+Scripting runtime checks                       : enabled 
+Debug build                                    : disabled 
+Coverage build                                 : disabled 
+Force 32-bit build                             : disabled 
+Checking for program 'rsync'                   : /usr/bin/rsync 
+Removing target_list file /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/target_list
+'configure' finished successfully (0.360s)
+Waf: Entering directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+Checking for env.py
+env added ENABLE_DFU_BOOT=0
+env added PROCESS_STACK=0x1C00
+env added MAIN_STACK=0x600
+env added IOMCU_FW=0
+env added PERIPH_FW=0
+env added BOARD_FLASH_SIZE=1024
+env added EXT_FLASH_SIZE_MB=0
+env added INT_FLASH_PRIMARY=False
+env added ENABLE_CRASHDUMP=False
+env appended CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard']
+env added CORTEX=cortex-m4
+env added APJ_BOARD_ID=9405
+env added APJ_BOARD_TYPE=STM32F405xx
+env added USBID=0x1209/0x5741
+env added FLASH_RESERVE_START_KB=0
+env added EXT_FLASH_RESERVE_START_KB=0
+env added FLASH_TOTAL=32768
+env added HAS_EXTERNAL_FLASH_SECTIONS=0
+env added CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4
+Embedding file hwdef.dat:/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hw.dat
+[2/7] Creating build/OPENFCF405/modules/ChibiOS/include_dirs
+[4/7] Compiling libraries/AP_Scripting/generator/src/main.c
+[6/7] Processing /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/libraries/AP_Scripting/lua_generated_bindings.cpp,/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/libraries/AP_Scripting/lua_generated_bindings.h: libraries/AP_Scripting/generator/description/bindings.desc build/OPENFCF405/gen-bindings -> build/OPENFCF405/libraries/AP_Scripting/lua_generated_bindings.cpp build/OPENFCF405/libraries/AP_Scripting/lua_generated_bindings.h
+[7/7] Linking build/OPENFCF405/modules/ChibiOS/libch.a
+ChibiOS (chibios_make.py): compiling 107 files with 12 workers...
+
+FAIL compiling chcore.c:
+../../modules/ChibiOS/os/common/ports/ARMv7-M/chcore.c:28:10: fatal error: string.h: No such file or directory
+   28 | #include <string.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+
+
+Not embedding bootloader; /Users/allah-computer/Research/open-fc/firmware/ardupilot/Tools/bootloaders/OPENFCF405_bl.bin does not exist
+No target_list file found, creating
+Generating compile_commands.json
+Build commands will be stored in build/OPENFCF405/compile_commands.json
+Generating compile_commands.json
+Build commands will be stored in build/OPENFCF405/compile_commands.json
+Waf: Leaving directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+Build failed
+ -> task in 'ChibiOS_lib' failed (exit status 1): 
+	{task 4475353424: ChibiOS_lib hwdef.h,hw.dat,ldscript.ld,common.ld,include_dirs,board.c,board.h,bouncebuffer.c,bouncebuffer.h,chconf.h,crashdump.c,ffconf.h,flash.c,flash.h,halconf.h,hrt.c,hrt.h,malloc.c,mcuconf.h,poll.h,ppm.h,spi_hook.h,stdio.h,stm32_util.c,stm32_util.h,stm32f1_mcuconf.h,stm32f3_mcuconf.h,stm32f47_mcuconf.h,stm32g4_mcuconf.h,stm32h7_A3_mcuconf.h,stm32h7_mcuconf.h,stm32h7_type2_mcuconf.h,stm32l4+_mcuconf.h,stm32l4_mcuconf.h,stubs.c,usbcfg.c,usbcfg.h,usbcfg_common.c,usbcfg_dualcdc.c,watchdog.c,watchdog.h,chibios_board.mk,chibios_common.mk,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,buzzer.c,buzzer.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,board.c,board.h,hal.h,hal_adc.h,hal_buffered_serial.h,hal_buffers.h,hal_can.h,hal_channels.h,hal_crypto.h,hal_dac.h,hal_efl.h,hal_eicu.h,hal_files.h,hal_flash.h,hal_gpt.h,hal_i2c.h,hal_i2s.h,hal_icu.h,hal_ioblock.h,hal_mac.h,hal_mii.h,hal_mmc_spi.h,hal_mmcsd.h,hal_objects.h,hal_pal.h,hal_persistent.h,hal_pwm.h,hal_queues.h,hal_rtc.h,hal_sdc.h,hal_serial.h,hal_serial_usb.h,hal_sio.h,hal_spi.h,hal_spi_v1.h,hal_spi_v2.h,hal_st.h,hal_streams.h,hal_trng.h,hal_uart.h,hal_usb.h,hal_usb_cdc.h,hal_usb_msd.h,hal_wdg.h,hal_wspi.h,hal_buffered_sio.c,hal_buffered_sio.h,hal_mfs.c,hal_mfs.h,hal_flash_device.c,hal_flash_device.h,hal_flash_device.c,hal_flash_device.h,hal_serial_nor.c,hal_serial_nor.h,hal_i2c_lld.c,hal_i2c_lld.h,bufstreams.c,bufstreams.h,chprintf.c,chprintf.h,chscanf.c,chscanf.h,memstreams.c,memstreams.h,nullstreams.c,nullstreams.h,osal_vt.c,osal_vt.h,osal.c,osal.h,osal.c,osal.h,chcore_timer.h,osal.c,osal.h,osal.c,osal.h,aducm_cc.h,aducm_gp.h,aducm_isr.c,aducm_isr.h,aducm_registry.h,hal_lld.c,hal_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_st_lld.c,hal_st_lld.h,aducm_uart.h,hal_serial_lld.c,hal_serial_lld.h,aducm_wut.h,hal_st_lld.c,hal_st_lld.h,avr_pins.h,avr_timers.h,hal_lld.c,hal_lld.h,hal_adc_lld.c,hal_adc_lld.h,hal_ext_lld.c,hal_ext_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_i2c_lld.c,hal_i2c_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_st_lld.c,hal_st_lld.h,hal_gpt_lld.c,hal_gpt_lld.h,hal_icu_lld.c,hal_icu_lld.h,hal_pwm_lld.c,hal_pwm_lld.h,hal_st_lld.c,hal_st_lld.h,hal_serial_lld.c,hal_serial_lld.h,hal_usb_lld.c,hal_usb_lld.h,hal_lld.c,hal_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_st_lld.c,hal_st_lld.h,hal_st_lld.c,hal_st_lld.h,hal_uart_lld.c,hal_uart_lld.h,avr_pins.h,avr_timers.h,hal_lld.c,hal_lld.h,hal_crc.c,hal_crc.h,hal_crc_lld.c,hal_crc_lld.h,xmega_crc.h,hal_crypto_lld.c,hal_crypto_lld.h,hal_dac_lld.c,hal_dac_lld.h,xmega_dma_lld.c,xmega_dma_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_st_lld.c,hal_st_lld.h,hal_st_lld.c,hal_st_lld.h,hal_serial_lld.c,hal_serial_lld.h,hal_uart_lld.c,hal_uart_lld.h,hal_wdg_lld.c,hal_wdg_lld.h,hal_lld.c,hal_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_serial_lld.c,hal_serial_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_st_lld.c,hal_st_lld.h,vic.c,vic.h,rp_dma.c,rp_dma.h,hal_pal_lld.c,hal_pal_lld.h,hal_i2c_lld.c,hal_i2c_lld.h,hal_rtc_lld.c,hal_rtc_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_st_lld.c,hal_st_lld.h,hal_sio_lld.c,hal_sio_lld.h,hal_wdg_lld.c,hal_wdg_lld.h,hal_lld.c,hal_lld.h,rp_fifo.h,rp_isr.c,rp_isr.h,rp_registry.h,hal_spi_lld.c,hal_spi_lld.h,spc5_dspi.h,spc5_edma.c,spc5_edma.h,hal_serial_lld.c,hal_serial_lld.h,hal_serial_lld.c,hal_serial_lld.h,spc5_linflex.h,hal_pal_lld.c,hal_pal_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_st_lld.c,hal_st_lld.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc560bc.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc560b.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc560d.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc560p.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc563m.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc564a.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc56ec.h,hal_lld.c,hal_lld.h,registers.h,spc5_registry.h,typedefs.h,xpc56el.h,hal_adc_lld.c,hal_adc_lld.h,hal_adc_lld.c,hal_adc_lld.h,hal_adc_lld.c,hal_adc_lld.h,hal_adc_lld.c,hal_adc_lld.h,hal_adc_lld.c,hal_adc_lld.h,stm32_bdma.c,stm32_bdma.h,hal_can_lld.c,hal_can_lld.h,hal_crypto_lld.c,hal_crypto_lld.h,hal_dac_lld.c,hal_dac_lld.h,stm32_dma.c,stm32_dma.h,stm32_dma.c,stm32_dma.h,stm32_exti.c,stm32_exti.h,hal_can_lld.c,hal_can_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_pal_lld.c,hal_pal_lld.h,stm32_gpio.h,hal_pal_lld.c,hal_pal_lld.h,stm32_gpio.h,hal_i2c_lld.c,hal_i2c_lld.h,hal_i2c_lld.c,hal_i2c_lld.h,hal_i2c_lld.c,hal_i2c_lld.h,hal_mac_lld.c,hal_mac_lld.h,hal_mac_lld.c,hal_mac_lld.h,stm32_mdma.c,stm32_mdma.h,hal_wspi_lld.c,hal_wspi_lld.h,hal_wspi_lld.c,hal_wspi_lld.h,hal_usb_lld.c,hal_usb_lld.h,stm32_otg.h,hal_wspi_lld.c,hal_wspi_lld.h,hal_wspi_lld.c,hal_wspi_lld.h,hal_trng_lld.c,hal_trng_lld.h,hal_rtc_lld.c,hal_rtc_lld.h,hal_rtc_lld.c,hal_rtc_lld.h,hal_rtc_lld.c,hal_rtc_lld.h,hal_sdc_lld.c,hal_sdc_lld.h,hal_sdc_lld.c,hal_sdc_lld.h,hal_sdc_lld.c,hal_sdc_lld.h,hal_i2s_lld.c,hal_i2s_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_spi_v2_lld.c,hal_spi_v2_lld.h,hal_i2s_lld.c,hal_i2s_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_spi_v2_lld.c,hal_spi_v2_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_spi_v2_lld.c,hal_spi_v2_lld.h,hal_st_lld.c,hal_st_lld.h,hal_st_lld.c,hal_st_lld.h,hal_eicu_lld.c,hal_eicu_lld.h,hal_gpt_lld.c,hal_gpt_lld.h,hal_icu_lld.c,hal_icu_lld.h,hal_pwm_lld.c,hal_pwm_lld.h,stm32_tim.h,hal_serial_lld.c,hal_serial_lld.h,hal_uart_lld.c,hal_uart_lld.h,hal_serial_lld.c,hal_serial_lld.h,hal_sio_lld.c,hal_sio_lld.h,hal_uart_lld.c,hal_uart_lld.h,stm32_usart.h,hal_serial_lld.c,hal_serial_lld.h,hal_sio_lld.c,hal_sio_lld.h,hal_uart_lld.c,hal_uart_lld.h,stm32_usart.h,hal_usb_lld.c,hal_usb_lld.h,stm32_usb.h,hal_usb_lld.c,hal_usb_lld.h,hal_wdg_lld.c,hal_wdg_lld.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_adc_lld.c,hal_adc_lld.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,hal_lld_f100.h,hal_lld_f103.h,hal_lld_f105_f107.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_adc_lld.c,hal_adc_lld.h,hal_lld.c,hal_lld.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,hal_lld_type1.h,hal_lld_type2.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_lld.c,hal_lld.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_lld.c,hal_lld.h,hal_lld_type1.h,hal_lld_type2.h,hal_lld_type3.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_lld.c,hal_lld.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_adc_lld.c,hal_adc_lld.h,hal_lld.c,hal_lld.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_lld.c,hal_lld.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_lld.c,hal_lld.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_lld.c,hal_lld.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,hal_efl_lld.c,hal_efl_lld.h,hal_lld.c,hal_lld.h,stm32_dmamux.h,stm32_isr.c,stm32_isr.h,stm32_rcc.h,stm32_registry.h,cache.h,mpu_v7m.h,nvic.c,nvic.h,sau.c,sau.h,hal_lld.c,hal_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_sio_lld.c,hal_sio_lld.h,hal_st_lld.c,hal_st_lld.h,console.c,console.h,hal_pal_lld.c,hal_pal_lld.h,hal_st_lld.c,hal_st_lld.h,hal_lld.c,hal_lld.h,hal_serial_lld.c,hal_serial_lld.h,hal_lld.c,hal_lld.h,hal_serial_lld.c,hal_serial_lld.h,hal.c,hal_adc.c,hal_buffered_serial.c,hal_buffers.c,hal_can.c,hal_crypto.c,hal_dac.c,hal_efl.c,hal_eicu.c,hal_flash.c,hal_gpt.c,hal_i2c.c,hal_i2s.c,hal_icu.c,hal_mac.c,hal_mmc_spi.c,hal_mmcsd.c,hal_pal.c,hal_pwm.c,hal_queues.c,hal_rtc.c,hal_sdc.c,hal_serial.c,hal_serial_usb.c,hal_sio.c,hal_spi.c,hal_st.c,hal_trng.c,hal_uart.c,hal_usb.c,hal_usb_msd.c,hal_wdg.c,hal_wspi.c,board.c,board.h,hal_adc_lld.c,hal_adc_lld.h,hal_can_lld.c,hal_can_lld.h,hal_crypto_lld.c,hal_crypto_lld.h,hal_dac_lld.c,hal_dac_lld.h,hal_efl_lld.c,hal_efl_lld.h,hal_gpt_lld.c,hal_gpt_lld.h,hal_i2c_lld.c,hal_i2c_lld.h,hal_i2s_lld.c,hal_i2s_lld.h,hal_icu_lld.c,hal_icu_lld.h,hal_lld.c,hal_lld.h,hal_mac_lld.c,hal_mac_lld.h,hal_pal_lld.c,hal_pal_lld.h,hal_pwm_lld.c,hal_pwm_lld.h,hal_rtc_lld.c,hal_rtc_lld.h,hal_sdc_lld.c,hal_sdc_lld.h,hal_serial_lld.c,hal_serial_lld.h,hal_sio_lld.c,hal_sio_lld.h,hal_spi_lld.c,hal_spi_lld.h,hal_spi_v2_lld.c,hal_spi_v2_lld.h,hal_st_lld.c,hal_st_lld.h,hal_trng_lld.c,hal_trng_lld.h,hal_uart_lld.c,hal_uart_lld.h,hal_usb_lld.c,hal_usb_lld.h,hal_wdg_lld.c,hal_wdg_lld.h,hal_wspi_lld.c,hal_wspi_lld.h,halconf.h,mcuconf.h,osal.c,osal.h,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,board.mk,hal.mk,hal_buffered_sio.mk,hal_mfs.mk,hal_flash_device.mk,hal_flash_device.mk,streams.mk,osal.mk,osal.mk,osal.mk,osal.mk,platform.mk,driver.mk,driver.mk,platform.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,platform.mk,driver.mk,driver.mk,driver.mk,driver.mk,platform.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,platform.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver_v2.mk,driver.mk,driver_v2.mk,driver.mk,driver_v2.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,driver.mk,platform.mk,platform.mk,platform_f105_f107.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform_type2.mk,platform.mk,platform.mk,platform.mk,platform_l412_l422.mk,platform_l432.mk,platform.mk,platform_l4p5_l4q5.mk,platform.mk,platform.mk,platform.mk,platform.mk,platform_v2.mk,platform.mk,platform.mk,platform.mk,board.mk,osal.mk,platform.mk,ap_romfs_embedded.h -> libch.a}
+ (run with -v to display more information)

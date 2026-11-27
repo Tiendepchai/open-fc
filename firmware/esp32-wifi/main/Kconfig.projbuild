@@ -1,0 +1,49 @@
+menu "OPEN-FC Wi-Fi MAVLink2 Bridge"
+
+config OPENFC_WIFI_MODE_AP
+    bool "Run ESP32 as SoftAP (uncheck for STA client)"
+    default y
+
+config OPENFC_WIFI_SSID
+    string "Wi-Fi SSID (placeholder in repo; set locally in untracked sdkconfig)"
+    default "OPENFC_AP_PLACEHOLDER"
+
+config OPENFC_WIFI_PASS
+    string "Wi-Fi Password (min 8 chars for WPA2; set locally in untracked sdkconfig)"
+    default "CHANGE_ME_LOCAL_ONLY"
+
+config OPENFC_GCS_IP
+    string "Default GCS UDP IPv4 destination (learned dynamically on first GCS packet)"
+    default "192.168.4.2"
+
+config OPENFC_GCS_UDP_PORT
+    int "GCS UDP destination port"
+    range 1024 65535
+    default 14550
+
+config OPENFC_LOCAL_UDP_PORT
+    int "Local UDP bind port"
+    range 1024 65535
+    default 14550
+
+config OPENFC_UART_PORT
+    int "ESP32 UART peripheral number connected to J_WIFI (candidate: UART2)"
+    range 1 2
+    default 2
+
+config OPENFC_UART_BAUD
+    int "UART baudrate matching OPENFCF405 SERIAL1_BAUD (candidate: 921600)"
+    range 57600 2000000
+    default 921600
+
+config OPENFC_UART_TX_GPIO
+    int "ESP32 UART TX GPIO -> J_WIFI Pin 4 (FC PA10 RX) [candidate]"
+    range 0 33
+    default 17
+
+config OPENFC_UART_RX_GPIO
+    int "ESP32 UART RX GPIO <- J_WIFI Pin 3 (FC PA9 TX) [candidate]"
+    range 0 39
+    default 16
+
+endmenu

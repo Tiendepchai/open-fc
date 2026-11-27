@@ -1,0 +1,59 @@
+# defaults.parm — OPENFCF405 Rev K Baseline Parameters
+# Status: candidate (design nominals; calibrate and validate in M2/M4/M5, props OFF)
+
+# --- Frame (F450 Quad-X) ---
+FRAME_CLASS 1
+FRAME_TYPE 1
+
+# --- Motor Outputs (TIM4 PB6-PB9 straight to J_ESC Pin 3-6) ---
+# hwdef.dat allocates dedicated TIM4_UP DMAR (DMA1 S6, SHARED_DMA_MASK=0) supporting
+# Normal PWM (0), OneShot (1), OneShot125 (2), and unidirectional DShot150/300/600 (4/5/6).
+# Keep MOT_PWM_TYPE=0 for safe initial prop-off bring-up; switch to 5 (DShot300) in M2
+# after verifying Uangel 60A ESC response (Bi-Directional DShot unsupported on PB9).
+# Map physical Quad-X corners via SERVO1_FUNCTION..SERVO4_FUNCTION during prop-off motor test.
+MOT_PWM_TYPE 0
+# Candidate 3S LiPo thrust voltage compensation (4.2 V * 3 = 12.6 V, 3.3 V * 3 = 9.9 V)
+MOT_BAT_VOLT_MAX 12.6
+MOT_BAT_VOLT_MIN 9.9
+
+# --- Serial Interfaces ---
+# SERIAL1 (USART1 / J_WIFI): ESP32 DevKit MAVLink2 UDP bridge
+SERIAL1_PROTOCOL 2
+SERIAL1_BAUD 921
+# SERIAL2 (USART2 / J_CAM): ESP32-CAM MAVLink2 LANDING_TARGET
+SERIAL2_PROTOCOL 2
+SERIAL2_BAUD 115
+# SERIAL3 (USART6 / J_GPS): BN-880 GPS (uBlox auto-detect; Copter-4.6 GPS1_TYPE=1)
+SERIAL3_PROTOCOL 5
+GPS1_TYPE 1
+# SERIAL4 (UART4 / J_RC): MC7RE SBUS via Q1 2N3904 hardware inverter
+SERIAL4_PROTOCOL 23
+
+# --- Battery Monitor (PA0 220k/18k divider; JP_C OPEN -> Voltage Only) ---
+BATT_MONITOR 3
+BATT_VOLT_MULT 13.22
+# Candidate 3S LiPo arming & failsafe thresholds (verify & calibrate with DMM in M2/M5)
+BATT_ARM_VOLT 11.1
+BATT_LOW_VOLT 10.8
+BATT_CRT_VOLT 10.2
+BATT_LOW_TIMER 10
+BATT_FS_LOW_ACT 2
+BATT_FS_CRT_ACT 1
+
+# --- Safety & Failsafes (NEVER weaken — AGENTS.md §1.3 & docs/safety-case.md §2) ---
+ARMING_CHECK 1
+FS_THR_ENABLE 1
+# Wi-Fi companion telemetry drop must NOT disrupt flight while RC link is active
+FS_GCS_ENABLE 0
+FS_EKF_ACTION 1
+FS_CRASH_CHECK 1
+DISARM_DELAY 10
+
+# --- Precision Landing Backend (MAVLink2 LANDING_TARGET from ESP32-CAM, no LiDAR) ---
+PLND_ENABLED 1
+PLND_TYPE 1
+PLND_STRICT 1
+# Rev K has no rangefinder (AP_RANGEFINDER_ENABLED=0); set both to 0 so AC_PrecLand does
+# not mark target OUT_OF_RANGE on !rangefinder_alt_valid (AC_PrecLand.cpp:374-384).
+PLND_ALT_MIN 0
+PLND_ALT_MAX 0

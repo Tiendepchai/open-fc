@@ -1,0 +1,63 @@
+menu "OPEN-FC Vision Precision Landing (ESP32-CAM)"
+
+config OPENFC_CAM_UART_PORT
+    int "ESP32-CAM UART peripheral connected to J_CAM (FC SERIAL2)"
+    range 0 2
+    default 1
+
+config OPENFC_CAM_UART_BAUD
+    int "UART baudrate matching OPENFCF405 SERIAL2_BAUD (candidate: 115200)"
+    range 57600 921600
+    default 115200
+
+config OPENFC_CAM_UART_TX_GPIO
+    int "ESP32-CAM UART TX GPIO -> J_CAM Pin 4 (FC PA3 RX) [candidate]"
+    range 0 33
+    default 14
+
+config OPENFC_CAM_UART_RX_GPIO
+    int "ESP32-CAM UART RX GPIO <- J_CAM Pin 3 (FC PA2 TX) [candidate]"
+    range 0 39
+    default 15
+
+config OPENFC_CAM_MAV_SYS_ID
+    int "MAVLink2 system ID (match FC sysid=1)"
+    range 1 255
+    default 1
+
+config OPENFC_CAM_MAV_COMP_ID
+    int "MAVLink2 component ID (191 = MAV_COMP_ID_ONBOARD_COMPUTER)"
+    range 1 255
+    default 191
+
+config OPENFC_CAM_MAX_FRAME_AGE_MS
+    int "Maximum allowed frame age before dropping LANDING_TARGET (ms)"
+    range 20 500
+    default 150
+
+config OPENFC_CAM_FX_MILLIPX
+    int "Calibrated fx * 1000 (0 = UNCALIBRATED -> blocks LANDING_TARGET TX)"
+    range 0 10000000
+    default 0
+
+config OPENFC_CAM_FY_MILLIPX
+    int "Calibrated fy * 1000 (0 = UNCALIBRATED -> blocks LANDING_TARGET TX)"
+    range 0 10000000
+    default 0
+
+config OPENFC_CAM_CX_MILLIPX
+    int "Calibrated cx * 1000 (default 160000 for QVGA 320x240)"
+    range 0 10000000
+    default 160000
+
+config OPENFC_CAM_CY_MILLIPX
+    int "Calibrated cy * 1000 (default 120000 for QVGA 320x240)"
+    range 0 10000000
+    default 120000
+
+config OPENFC_CAM_YAW_OFFSET_MDEG
+    int "Camera yaw offset relative to FRD body frame in millidegrees"
+    range -360000 360000
+    default 0
+
+endmenu

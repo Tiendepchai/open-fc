@@ -1,0 +1,3 @@
+[submodule "firmware/ardupilot"]
+	path = firmware/ardupilot
+	url = https://github.com/ArduPilot/ardupilot.git

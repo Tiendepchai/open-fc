@@ -1,0 +1,187 @@
+# hwdef.dat — OPENFCF405 (WeAct STM32F405RGT6 + Carrier PCB Rev K 100% THT)
+# Target: ArduPilot Copter-4.6.3 / ChibiOS
+# Baseline: docs/OPEN_FC_MINIMAL_v1.0.md & AGENTS.md
+
+MCU STM32F4xx STM32F405xx
+
+# Custom local board ID (candidate — change if registering upstream)
+APJ_BOARD_ID 9405
+
+# confirmed_from_vendor_doc (WeAct-STM32F4_64PIN-CoreBoard_V11 SchDoc.pdf: X2 XTAL3225 8MHz +/-10ppm 10pF, C7/C16 10pF)
+OSCILLATOR_HZ 8000000
+
+# System tick timer (32-bit TIM5 avoids TIM4 motor timer)
+define STM32_ST_USE_TIMER 5
+define CH_CFG_ST_RESOLUTION 32
+
+# 1 MB Flash layout (STM32F405RGT6):
+#   Sectors 0-1 (32 KB): Bootloader (0x08000000 - 0x08007FFF)
+#   Sectors 2-3 (32 KB): AP_FlashStorage dual-page params (STORAGE_FLASH_PAGE 2)
+#   Sectors 4-11 (960 KB): Main ArduCopter firmware (0x08010000 - 0x080FFFFF)
+FLASH_SIZE_KB 1024
+FLASH_RESERVE_START_KB 64
+STORAGE_FLASH_PAGE 2
+define HAL_STORAGE_SIZE 15360
+
+# Optimize for size to fit 1 MB Flash ceiling without dropping safety features
+env OPTIMIZE -Os
+
+# USB OTG FS (WeAct USB-C)
+# Measured (M0-01): PA9 is isolated from 5V/VBUS and assigned to USART1_TX (J_WIFI).
+# Verified via ChibiOS STM32F4xx stm32_registry.h (STM32_OTG_STEPPING=2) + OTGv1/hal_usb_lld.c:
+#   Leaving BOARD_OTG_NOVBUSSENS undefined sets OTG_FS_GCCFG bit 21 (NOVBUSSENS=1 on STM32F405),
+#   disabling hardware VBUS sensing on PA9. Do NOT define BOARD_OTG_NOVBUSSENS on STM32F405.
+PA11 OTG_FS_DM OTG1
+PA12 OTG_FS_DP OTG1
+
+# SWD debug header
+PA13 JTMS-SWDIO SWD
+PA14 JTCK-SWCLK SWD
+
+# FILL (M0-09): verify WeAct STM32F405RGT6 onboard LED / SDIO / SPI flash pins before uncommenting.
+# Do NOT infer pins from other F405 boards.
+
+# =============================================================================
+# Serial Ports
+#   SERIAL0 = OTG1   (USB-C console / GCS)
+#   SERIAL1 = USART1 (J_WIFI — ESP32 DevKit MAVLink2 UDP bridge)
+#   SERIAL2 = USART2 (J_CAM  — ESP32-CAM MAVLink2 LANDING_TARGET)
+#   SERIAL3 = USART6 (J_GPS  — BN-880 GPS)
+#   SERIAL4 = UART4  (J_RC   — MC7RE SBUS via external inverted SBUS carrier + R12 4.7k series, ADR-003)
+# =============================================================================
+SERIAL_ORDER OTG1 USART1 USART2 USART6 UART4
+
+# USART1 — J_WIFI (JST-XH 4P: 1=+5V_COMP, 2=GND, 3=PA9 TX, 4=PA10 RX)
+PA9  USART1_TX USART1
+PA10 USART1_RX USART1
+define DEFAULT_SERIAL1_PROTOCOL SerialProtocol_MAVLink2
+define DEFAULT_SERIAL1_BAUD 921
+
+# USART2 — J_CAM (JST-XH 4P: 1=+5V_COMP, 2=GND, 3=PA2 TX, 4=PA3 RX)
+# Verified via Copter-4.6.3 chibios_hwdef.py:
+#   USART2_TX (DMA1 S6 C4) collides with TIM4_UP (DMA1 S6 C2).
+#   Marking USART2_TX NODMA frees DMA1 S6 exclusively for TIM4_UP DMAR 4-channel DShot
+#   while USART2_RX (PA3, incoming LANDING_TARGET) keeps dedicated DMA1 S5 C4.
+PA2  USART2_TX USART2 NODMA
+PA3  USART2_RX USART2
+define DEFAULT_SERIAL2_PROTOCOL SerialProtocol_MAVLink2
+define DEFAULT_SERIAL2_BAUD 115
+
+# USART6 — J_GPS (JST-XH 6P)
+PC6  USART6_TX USART6
+PC7  USART6_RX USART6
+define DEFAULT_SERIAL3_PROTOCOL SerialProtocol_GPS
+
+# UART4 — J_RC (JST-XH 3P, SBUS inverted externally by external SBUS carrier PCB + R12 4.7k series, ADR-003)
+# RX-only: PA0 is used by ADC1_IN0 (BATT_VOLTAGE_SENS).
+PA1  UART4_RX UART4
+define DEFAULT_SERIAL4_PROTOCOL SerialProtocol_RCIN
+
+# =============================================================================
+# SPI1 — IMU (MPU6500, U2) & Barometer (BMP280, U3)
+# Measured (M0-02/M0-03): both modules have ~9 kOhm internal CS pull-ups.
+# =============================================================================
+PA5  SPI1_SCK  SPI1
+PA6  SPI1_MISO SPI1
+PA7  SPI1_MOSI SPI1
+
+PA4  MPU6500_CS CS
+PB12 BMP280_CS  CS
+PC4  MPU6500_INT INPUT
+
+SPIDEV mpu6500 SPI1 DEVID1 MPU6500_CS MODE3 1*MHZ 8*MHZ
+SPIDEV bmp280  SPI1 DEVID2 BMP280_CS  MODE3 1*MHZ 10*MHZ
+
+# Candidate IMU rotation — verify physical MPU6500 orientation on Rev K PCB in M2
+IMU Invensense SPI:mpu6500 ROTATION_NONE
+BARO BMP280 SPI:bmp280
+
+# =============================================================================
+# I2C2 — External Compass (BN-880 via J_GPS)
+# Measured (M0-04): 18 kOhm on BN-880; Rev K adds R9/R10 4.7 kOhm to +3V3.
+# =============================================================================
+PB10 I2C2_SCL I2C2
+PB11 I2C2_SDA I2C2
+I2C_ORDER I2C2
+define HAL_PROBE_EXTERNAL_I2C_COMPASSES
+define HAL_I2C_INTERNAL_MASK 0
+define HAL_COMPASS_AUTO_ROT_DEFAULT 2
+# Enable QMC5883P alongside HMC5843/QMC5883L (disabled by default on <=1 MB boards; newer BN-880 units may ship QMC5883P)
+define AP_COMPASS_QMC5883P_ENABLED 1
+
+# =============================================================================
+# ADC1 — Battery Voltage (PA0) & Optional Current Sense (PC0, JP_C DEFAULT OPEN)
+# VBAT divider: 220 kOhm (1%) / 18 kOhm (1%) + 4.7 kOhm + 100 nF -> MULT ~13.22
+# =============================================================================
+PA0 BATT_VOLTAGE_SENS ADC1 SCALE(1)
+PC0 BATT_CURRENT_SENS ADC1 SCALE(1)
+
+define HAL_BATT_VOLT_PIN 0
+define HAL_BATT_CURR_PIN 10
+define HAL_BATT_VOLT_SCALE 13.22
+define HAL_BATT_CURR_SCALE 1.0
+# Default 3 = Analog Voltage Only (keep PC0 disabled while JP_C is OPEN)
+define HAL_BATT_MONITOR_DEFAULT 3
+
+# =============================================================================
+# Motor Outputs — TIM4_CH1..CH4 -> J_ESC Pin 3..6 (47R series + 10k pull-down)
+# Verified via Copter-4.6.3 chibios_hwdef.py + RCOutput.cpp:
+#   - Unidirectional DShot150/300/600 uses TIM4_UP DMAR burst across all 4 CCRs (PB6-PB9)
+#     on dedicated DMA1 Stream 6 Ch 2 (SHARED_DMA_MASK = 0 with USART2_TX NODMA).
+#   - Bi-Directional DShot (BIDIR) is NOT supported because TIM4_CH4 (PB9) lacks a
+#     dedicated compare/capture DMA stream on STM32F405 (do not add BIDIR).
+#   - defaults.parm keeps MOT_PWM_TYPE=0 (Normal PWM) until prop-off Uangel 60A ESC
+#     bench verification in M2, then MOT_PWM_TYPE=5 (DShot300) can be enabled via param.
+# =============================================================================
+PB6 TIM4_CH1 TIM4 PWM(1) GPIO(50)
+PB7 TIM4_CH2 TIM4 PWM(2) GPIO(51)
+PB8 TIM4_CH3 TIM4 PWM(3) GPIO(52)
+PB9 TIM4_CH4 TIM4 PWM(4) GPIO(53)
+
+DMA_NOSHARE TIM4_UP SPI1*
+DMA_PRIORITY TIM4_UP SPI1*
+
+# =============================================================================
+# Feature Budget (1 MB Flash Ceiling — AGENTS.md §1.3)
+# KEEP: EKF3, PreArm checks, RC/GPS/Battery failsafes, MAVLink2, Precision Landing.
+# DISABLE: non-baseline features and unused sensor drivers only.
+# =============================================================================
+include ../include/minimize_features.inc
+
+define AC_PRECLAND_ENABLED 1
+define AP_FENCE_ENABLED 1
+
+define HAL_ENABLE_DRONECAN_DRIVERS 0
+define AP_SCRIPTING_ENABLED 0
+define AP_CAMERA_ENABLED 0
+define AP_TERRAIN_AVAILABLE 0
+define AP_OPTICALFLOW_ENABLED 0
+define AP_RANGEFINDER_ENABLED 0
+define HAL_ADSB_ENABLED 0
+define HAL_PARACHUTE_ENABLED 0
+define AP_BUTTON_ENABLED 0
+define AP_RELAY_ENABLED 0
+define AP_RPM_ENABLED 0
+# Quadcopter baseline does not use an airspeed sensor; clear backends enabled by minimize_common.inc
+define AP_AIRSPEED_ENABLED 0
+undef AP_AIRSPEED_MS4525_ENABLED
+undef AP_AIRSPEED_ASP5033_ENABLED
+undef AP_AIRSPEED_ANALOG_ENABLED
+undef AP_AIRSPEED_MS5525_ENABLED
+undef AP_AIRSPEED_SDP3X_ENABLED
+undef AP_AIRSPEED_NMEA_ENABLED
+define AP_VISUALODOM_ENABLED 0
+define AP_PROXIMITY_ENABLED 0
+define AP_EFI_ENABLED 0
+define AP_ICENGINE_ENABLED 0
+define HAL_MSP_SENSORS_ENABLED 0
+define AP_FRSKY_TELEM_ENABLED 0
+define AP_DEVO_TELEM_ENABLED 0
+define AP_TRAMP_ENABLED 0
+define HAL_TORQEEDO_ENABLED 0
+
+# Restrict IMU & Baro drivers to Rev K hardware (MPU6500 + BMP280)
+define AP_BARO_BACKEND_DEFAULT_ENABLED 0
+define AP_BARO_BMP280_ENABLED 1
+define AP_INERTIALSENSOR_BACKEND_DEFAULT_ENABLED 0
+define AP_INERTIALSENSOR_INVENSENSE_ENABLED 1

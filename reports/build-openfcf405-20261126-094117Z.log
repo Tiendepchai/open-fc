@@ -1,0 +1,731 @@
+--- Step 1/2: Bootloader (OPENFCF405) ---
+Setting top to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot 
+Setting out to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot/build 
+Autoconfiguration                        : enabled 
+Checking for program 'python'            : /Users/allah-computer/Research/open-fc/.venv/bin/python3 
+Checking for python version >= 3.6.9     : 3.14.6 
+Setting board to                         : OPENFCF405 
+Using toolchain                          : arm-none-eabi 
+Checking for 'g++' (C++ compiler)        : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-g++ 
+Checking for 'gcc' (C compiler)          : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc 
+Checking for program 'arm-none-eabi-nm'  : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-nm 
+Checking for c flags '-MMD'              : yes 
+Checking for cxx flags '-MMD'            : yes 
+CXX Compiler                             : g++ 12.3.1 
+Checking for program 'make'              : /var/folders/by/4fxym4x96_x1k0491t_ztch40000gp/T/tmp.7Jf13QRakr/make 
+Checking for program 'arm-none-eabi-objcopy' : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objcopy 
+Setup for MCU STM32F405xx
+Writing hwdef setup in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h
+Writing DMA map
+Setting up as bootloader
+Generating ldscript.ld
+Checking for env.py
+env set ENABLE_DFU_BOOT=0
+env set PROCESS_STACK=0x1C00
+env set MAIN_STACK=0x600
+env set IOMCU_FW=0
+env set PERIPH_FW=0
+env set BOARD_FLASH_SIZE=1024
+env set EXT_FLASH_SIZE_MB=0
+env set INT_FLASH_PRIMARY=False
+env set ENABLE_CRASHDUMP=False
+env set CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard']
+env set CORTEX=cortex-m4
+env set APJ_BOARD_ID=9405
+env set APJ_BOARD_TYPE=STM32F405xx
+env set USBID=0x1209/0x5741
+env set FLASH_RESERVE_START_KB=0
+env set EXT_FLASH_RESERVE_START_KB=0
+env set FLASH_TOTAL=32768
+env set HAS_EXTERNAL_FLASH_SECTIONS=0
+env set CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4
+Enabling ChibiOS asserts                     : no 
+Disabling Watchdog                           : no 
+Enabling malloc guard                        : no 
+Enabling ChibiOS thread statistics           : no 
+Enabling -Werror                             : no 
+Checking for intelhex module:                : OK 
+Enabled OpenDroneID                          : no 
+Enabled firmware ID checking                 : no 
+GPS Debug Logging                            : no 
+Enabled custom controller                    : no 
+Checking for HAVE_CMATH_ISFINITE             : yes 
+Checking for HAVE_CMATH_ISINF                : yes 
+Checking for HAVE_CMATH_ISNAN                : yes 
+Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE : yes 
+Checking for NEED_CMATH_ISINF_STD_NAMESPACE    : yes 
+Checking for NEED_CMATH_ISNAN_STD_NAMESPACE    : yes 
+Checking for header endian.h                   : not found 
+Checking for header byteswap.h                 : not found 
+Checking for HAVE_MEMRCHR                      : no 
+Configured VSCode Intellisense:                : no 
+DC_DSDL compiler in                            : /Users/allah-computer/Research/open-fc/firmware/ardupilot/modules/DroneCAN/dronecan_dsdlc 
+Source is git repository                       : yes 
+Update submodules                              : no 
+Checking for program 'git'                     : /opt/homebrew/bin/git 
+Gtest                                          : STM32 boards currently don't support compiling gtest 
+Checking for program 'arm-none-eabi-size'      : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-size 
+Benchmarks                                     : disabled 
+Unit tests                                     : disabled 
+Scripting                                      : disabled 
+Scripting runtime checks                       : enabled 
+Debug build                                    : disabled 
+Coverage build                                 : disabled 
+Force 32-bit build                             : disabled 
+Checking for program 'rsync'                   : /usr/bin/rsync 
+Removing target_list file /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/target_list
+'configure' finished successfully (0.488s)
+Waf: Entering directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+Checking for env.py
+env added ENABLE_DFU_BOOT=0
+env added PROCESS_STACK=0x1C00
+env added MAIN_STACK=0x600
+env added IOMCU_FW=0
+env added PERIPH_FW=0
+env added BOARD_FLASH_SIZE=1024
+env added EXT_FLASH_SIZE_MB=0
+env added INT_FLASH_PRIMARY=False
+env added ENABLE_CRASHDUMP=False
+env appended CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard']
+env added CORTEX=cortex-m4
+env added APJ_BOARD_ID=9405
+env added APJ_BOARD_TYPE=STM32F405xx
+env added USBID=0x1209/0x5741
+env added FLASH_RESERVE_START_KB=0
+env added EXT_FLASH_RESERVE_START_KB=0
+env added FLASH_TOTAL=32768
+env added HAS_EXTERNAL_FLASH_SECTIONS=0
+env added CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4
+Embedding file hwdef.dat:/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hw.dat
+[1/7] Creating build/OPENFCF405/hwdef.h
+[2/7] Creating build/OPENFCF405/modules/ChibiOS/include_dirs
+[5/7] Creating build/OPENFCF405/chibios_flags.h
+Setup for MCU STM32F405xx
+Writing hwdef setup in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h
+Writing DMA map
+Setting up as bootloader
+No change in hwdef.h
+Generating ldscript.ld
+
+[7/7] Linking build/OPENFCF405/modules/ChibiOS/libch.a
+ChibiOS (chibios_make.py): compiling 107 files with 12 workers...
+ChibiOS: Done (modules/ChibiOS/libch.a, 107 objects)
+
+Not embedding bootloader; /Users/allah-computer/Research/open-fc/firmware/ardupilot/Tools/bootloaders/OPENFCF405_bl.bin does not exist
+No target_list file found, creating
+Generating compile_commands.json
+Build commands will be stored in build/OPENFCF405/compile_commands.json
+Generating compile_commands.json
+Build commands will be stored in build/OPENFCF405/compile_commands.json
+[  8/237] Compiling libraries/AP_HAL/utility/RCOutput_Tap.cpp
+[  9/237] Compiling libraries/AP_HAL/Scheduler.cpp
+[ 10/237] Compiling libraries/AP_HAL/Device.cpp
+[ 11/237] Compiling libraries/AP_HAL/CANIface.cpp
+[ 12/237] Compiling libraries/AP_HAL/utility/utoa_invert.cpp
+[ 13/237] Compiling libraries/AP_HAL/utility/DataRateLimit.cpp
+[ 14/237] Compiling libraries/AP_HAL/utility/sumd.cpp
+[ 15/237] Compiling libraries/AP_HAL/utility/st24.cpp
+[ 16/237] Compiling libraries/AP_HAL/utility/BetterStream.cpp
+[ 17/237] Compiling libraries/AP_HAL/RCOutput.cpp
+[ 18/237] Compiling libraries/AP_HAL/utility/srxl.cpp
+[ 19/237] Compiling libraries/AP_HAL/utility/replace.cpp
+[ 20/237] Compiling libraries/AP_HAL/system.cpp
+[ 21/237] Compiling libraries/AP_HAL/utility/print_vprintf.cpp
+[ 22/237] Compiling libraries/AP_HAL/utility/packetise.cpp
+[ 23/237] Compiling libraries/AP_HAL/Util.cpp
+[ 24/237] Compiling libraries/AP_HAL/HAL.cpp
+[ 25/237] Compiling libraries/AP_HAL/DSP.cpp
+[ 26/237] Compiling libraries/AP_HAL/utility/getopt_cpp.cpp
+[ 27/237] Compiling libraries/AP_HAL/utility/ftoa_engine.cpp
+[ 28/237] Compiling libraries/AP_HAL/UARTDriver.cpp
+[ 29/237] Compiling libraries/AP_HAL/utility/Socket_native.cpp
+[ 30/237] Compiling libraries/AP_HAL/utility/RingBuffer.cpp
+[ 31/237] Compiling libraries/AP_HAL/utility/Socket.cpp
+[ 32/237] Compiling libraries/AP_HAL/utility/dsm.cpp
+[ 33/237] Compiling libraries/AP_HAL/GPIO.cpp
+[ 34/237] Compiling libraries/AP_HAL/Storage.cpp
+[ 35/237] Compiling libraries/AP_HAL/utility/RCOutput_Tap_Linux.cpp
+[ 36/237] Compiling libraries/AP_HAL/Semaphores.cpp
+[ 37/237] Compiling libraries/AP_HAL_ChibiOS/WSPIDevice.cpp
+[ 38/237] Compiling libraries/AP_HAL_ChibiOS/CanIface.cpp
+[ 39/237] Compiling libraries/AP_HAL_ChibiOS/DSP.cpp
+[ 40/237] Compiling libraries/AP_HAL_ChibiOS/sdcard.cpp
+[ 41/237] Compiling libraries/AP_HAL_ChibiOS/Device.cpp
+[ 42/237] Compiling libraries/AP_HAL_ChibiOS/I2CDevice.cpp
+[ 43/237] Compiling libraries/AP_HAL_ChibiOS/shared_dma.cpp
+[ 44/237] Compiling libraries/AP_HAL_ChibiOS/RCInput.cpp
+[ 45/237] Compiling libraries/AP_HAL_ChibiOS/RCOutput.cpp
+[ 46/237] Compiling libraries/AP_HAL_ChibiOS/stdio.cpp
+[ 47/237] Compiling libraries/AP_HAL_ChibiOS/RCOutput_bdshot.cpp
+[ 48/237] Compiling libraries/AP_HAL_ChibiOS/RCOutput_iofirmware.cpp
+[ 49/237] Compiling libraries/AP_HAL_ChibiOS/AnalogIn.cpp
+[ 50/237] Compiling libraries/AP_HAL_ChibiOS/RCOutput_serial.cpp
+[ 51/237] Compiling libraries/AP_HAL_ChibiOS/SPIDevice.cpp
+[ 52/237] Compiling libraries/AP_HAL_ChibiOS/CANFDIface.cpp
+[ 53/237] Compiling libraries/AP_HAL_ChibiOS/Scheduler.cpp
+[ 54/237] Compiling libraries/AP_HAL_ChibiOS/Semaphores.cpp
+[ 55/237] Compiling libraries/AP_HAL_ChibiOS/SoftSigReader.cpp
+[ 56/237] Compiling libraries/AP_HAL_ChibiOS/SoftSigReaderInt.cpp
+[ 57/237] Compiling libraries/AP_HAL_ChibiOS/UARTDriver.cpp
+[ 58/237] Compiling libraries/AP_HAL_ChibiOS/Util.cpp
+[ 59/237] Compiling libraries/AP_Scripting/AP_Scripting.cpp
+[ 60/237] Compiling libraries/AP_Scripting/AP_Scripting_CANSensor.cpp
+[ 61/237] Compiling libraries/AP_Scripting/AP_Scripting_SerialAccess.cpp
+[ 62/237] Compiling libraries/AP_Scripting/AP_Scripting_SerialDevice.cpp
+[ 63/237] Compiling libraries/AP_Scripting/lua/src/lauxlib.c
+[ 64/237] Compiling libraries/AP_Scripting/lua/src/loslib.c
+[ 65/237] Compiling libraries/AP_Scripting/lua/src/lstrlib.c
+[ 66/237] Compiling libraries/AP_Scripting/lua/src/lgc.c
+[ 67/237] Compiling libraries/AP_Scripting/lua/src/ltablib.c
+[ 68/237] Compiling libraries/AP_Scripting/lua/src/lopcodes.c
+[ 69/237] Compiling libraries/AP_Scripting/lua/src/loadlib.c
+[ 70/237] Compiling libraries/AP_Scripting/lua/src/lobject.c
+[ 71/237] Compiling libraries/AP_Scripting/lua/src/ltm.c
+[ 72/237] Compiling libraries/AP_Scripting/lua/src/lmathlib.c
+[ 73/237] Compiling libraries/AP_Scripting/lua/src/lfunc.c
+[ 74/237] Compiling libraries/AP_Scripting/lua/src/ltable.c
+[ 75/237] Compiling libraries/AP_Scripting/lua/src/llex.c
+[ 76/237] Compiling libraries/AP_Scripting/lua/src/linit.c
+[ 77/237] Compiling libraries/AP_Scripting/lua/src/liolib.c
+[ 78/237] Compiling libraries/AP_Scripting/lua/src/luac.c
+[ 79/237] Compiling libraries/AP_Scripting/lua/src/lmem.c
+[ 80/237] Compiling libraries/AP_Scripting/lua/src/ldump.c
+[ 81/237] Compiling libraries/AP_Scripting/lua/src/lundump.c
+[ 82/237] Compiling libraries/AP_Scripting/lua/src/lutf8lib.c
+[ 83/237] Compiling libraries/AP_Scripting/lua/src/lparser.c
+[ 84/237] Compiling libraries/AP_Scripting/lua/src/lvm.c
+[ 85/237] Compiling libraries/AP_Scripting/lua/src/lzio.c
+[ 86/237] Compiling libraries/AP_Scripting/lua/src/ldo.c
+[ 87/237] Compiling libraries/AP_Scripting/lua/src/lapi.c
+[ 88/237] Compiling libraries/AP_Scripting/lua/src/lbaselib.c
+[ 89/237] Compiling libraries/AP_Scripting/lua/src/ldebug.c
+[ 90/237] Compiling libraries/AP_Scripting/lua/src/lbitlib.c
+[ 91/237] Compiling libraries/AP_Scripting/lua/src/lcode.c
+[ 92/237] Compiling libraries/AP_Scripting/lua/src/lua.c
+[ 93/237] Compiling libraries/AP_Scripting/lua/src/lcorolib.c
+[ 94/237] Compiling libraries/AP_Scripting/lua/src/lctype.c
+[ 95/237] Compiling libraries/AP_Scripting/lua/src/lstate.c
+[ 96/237] Compiling libraries/AP_Scripting/lua/src/ldblib.c
+[ 97/237] Compiling libraries/AP_Scripting/lua/src/lstring.c
+[ 98/237] Compiling libraries/AP_Common/Location.cpp
+[ 99/237] Compiling libraries/AP_Common/time.cpp
+[100/237] Compiling libraries/AP_Common/c++.cpp
+[101/237] Compiling libraries/AP_Common/AP_ExpandingArray.cpp
+[102/237] Compiling libraries/AP_Common/float16.cpp
+[103/237] Compiling libraries/AP_Common/AP_Common.cpp
+[104/237] Compiling libraries/AP_Common/NMEA.cpp
+[105/237] Compiling libraries/AP_Common/sorting.cpp
+[106/237] Compiling libraries/AP_Common/AP_FWVersion.cpp
+[107/237] Compiling libraries/AP_Common/ExpandingString.cpp
+[108/237] Compiling libraries/AP_Math/spline5.cpp
+[109/237] Compiling libraries/AP_Math/polygon.cpp
+[110/237] Compiling libraries/AP_Math/matrix3.cpp
+[111/237] Compiling libraries/AP_Math/chirp.cpp
+[112/237] Compiling libraries/AP_Math/quaternion.cpp
+[113/237] Compiling libraries/AP_Math/polyfit.cpp
+[114/237] Compiling libraries/AP_Math/matrixN.cpp
+[115/237] Compiling libraries/AP_Math/vector3.cpp
+[116/237] Compiling libraries/AP_Math/matrix_alg.cpp
+[117/237] Compiling libraries/AP_Math/crc.cpp
+[118/237] Compiling libraries/AP_Math/AP_Math.cpp
+[119/237] Compiling libraries/AP_Math/location_double.cpp
+[120/237] Compiling libraries/AP_Math/location.cpp
+[121/237] Compiling libraries/AP_Math/SplineCurve.cpp
+[122/237] Compiling libraries/AP_Math/control.cpp
+[123/237] Compiling libraries/AP_Math/vector2.cpp
+[124/237] Compiling libraries/AP_Math/AP_GeodesicGrid.cpp
+[125/237] Compiling modules/lwip/src/core/ipv4/ip4_frag.c
+[126/237] Compiling modules/lwip/src/api/err.c
+[127/237] Compiling modules/lwip/src/core/ipv4/ip4_addr.c
+[128/237] Compiling modules/lwip/src/core/raw.c
+[129/237] Compiling libraries/AP_Networking/lwip_hal/arch/evtimer.c
+[130/237] Compiling modules/lwip/src/netif/ppp/eap.c
+[131/237] Compiling modules/lwip/src/netif/ppp/upap.c
+[132/237] Compiling modules/lwip/src/core/def.c
+[133/237] Compiling modules/lwip/src/api/netifapi.c
+[134/237] Compiling modules/lwip/src/core/sys.c
+[135/237] Compiling modules/lwip/src/netif/ppp/pppoe.c
+[136/237] Compiling modules/lwip/src/netif/lowpan6_ble.c
+[137/237] Compiling modules/lwip/src/netif/ppp/multilink.c
+[138/237] Compiling modules/lwip/src/netif/ppp/pppapi.c
+[139/237] Compiling modules/lwip/src/netif/ppp/lcp.c
+[140/237] Compiling modules/lwip/src/netif/ppp/chap-new.c
+[141/237] Compiling modules/lwip/src/netif/ppp/ecp.c
+[142/237] Compiling modules/lwip/src/netif/ppp/chap-md5.c
+[143/237] Compiling modules/lwip/src/netif/ppp/eui64.c
+[144/237] Compiling modules/lwip/src/netif/ppp/ipv6cp.c
+[145/237] Compiling modules/lwip/src/netif/zepif.c
+[146/237] Compiling libraries/AP_Networking/lwip_hal/arch/sys_arch.cpp
+[147/237] Compiling modules/lwip/src/api/tcpip.c
+[148/237] Compiling modules/lwip/src/api/netbuf.c
+[149/237] Compiling modules/lwip/src/api/if_api.c
+[150/237] Compiling modules/lwip/src/core/ipv4/icmp.c
+[151/237] Compiling modules/lwip/src/netif/lowpan6.c
+[152/237] Compiling modules/lwip/src/api/api_lib.c
+[153/237] Compiling modules/lwip/src/core/ipv4/dhcp.c
+[154/237] Compiling modules/lwip/src/core/ipv4/igmp.c
+[155/237] Compiling modules/lwip/src/core/ipv4/etharp.c
+[156/237] Compiling modules/lwip/src/core/ipv4/autoip.c
+[157/237] Compiling modules/lwip/src/core/tcp_out.c
+[158/237] Compiling modules/lwip/src/core/stats.c
+[159/237] Compiling modules/lwip/src/netif/ppp/chap_ms.c
+[160/237] Compiling modules/lwip/src/core/mem.c
+[161/237] Compiling modules/lwip/src/core/inet_chksum.c
+[162/237] Compiling modules/lwip/src/core/tcp_in.c
+[184/237] Compiling modules/lwip/src/api/api_msg.c
+[185/237] Compiling modules/lwip/src/core/memp.c
+[186/237] Compiling modules/lwip/src/netif/ppp/pppol2tp.c
+[187/237] Compiling modules/lwip/src/core/netif.c
+[188/237] Compiling modules/lwip/src/core/init.c
+[189/237] Compiling modules/lwip/src/core/ip.c
+[190/237] Compiling libraries/AP_Networking/AP_Networking_ChibiOS.cpp
+[191/237] Compiling modules/lwip/src/core/ipv4/ip4.c
+[192/237] Compiling modules/lwip/src/core/altcp.c
+[193/237] Compiling modules/lwip/src/netif/ppp/fsm.c
+[194/237] Compiling libraries/AP_Networking/AP_Networking_tests.cpp
+[195/237] Compiling libraries/AP_Networking/AP_Networking.cpp
+[196/237] Compiling libraries/AP_Networking/AP_Networking_CAN.cpp
+[197/237] Compiling modules/lwip/src/api/netdb.c
+[198/237] Compiling modules/lwip/src/netif/ethernet.c
+[199/237] Compiling modules/lwip/src/netif/bridgeif.c
+[200/237] Compiling modules/lwip/src/netif/ppp/magic.c
+[201/237] Compiling modules/lwip/src/netif/lowpan6_common.c
+[202/237] Compiling modules/lwip/src/netif/ppp/vj.c
+[203/237] Compiling modules/lwip/src/netif/ppp/ccp.c
+[204/237] Compiling modules/lwip/src/netif/ppp/pppcrypt.c
+[205/237] Compiling modules/lwip/src/netif/ppp/ipcp.c
+[206/237] Compiling modules/lwip/src/core/ipv4/acd.c
+[207/237] Compiling modules/lwip/src/core/pbuf.c
+[208/237] Compiling libraries/AP_Networking/AP_Networking_port.cpp
+[209/237] Compiling modules/lwip/src/core/udp.c
+[210/237] Compiling modules/lwip/src/core/tcp.c
+[211/237] Compiling modules/lwip/src/core/timeouts.c
+[212/237] Compiling modules/lwip/src/netif/ppp/pppos.c
+[213/237] Compiling modules/lwip/src/core/altcp_alloc.c
+[214/237] Compiling modules/lwip/src/netif/ppp/mppe.c
+[215/237] Compiling modules/lwip/src/netif/ppp/utils.c
+[216/237] Compiling modules/lwip/src/netif/ppp/demand.c
+[217/237] Compiling modules/lwip/src/core/dns.c
+[218/237] Compiling modules/lwip/src/netif/ppp/auth.c
+[219/237] Compiling modules/lwip/src/netif/ppp/ppp.c
+[220/237] Compiling libraries/AP_Networking/AP_Networking_address.cpp
+[221/237] Compiling modules/lwip/src/netif/slipif.c
+[222/237] Compiling modules/lwip/src/netif/bridgeif_fdb.c
+[223/237] Compiling libraries/AP_Networking/AP_Networking_macaddr.cpp
+[224/237] Compiling libraries/AP_Networking/AP_Networking_PPP.cpp
+[225/237] Compiling modules/lwip/src/core/altcp_tcp.c
+[226/237] Compiling modules/lwip/src/api/sockets.c
+[227/237] Compiling libraries/AP_ROMFS/tinflate.cpp
+[228/237] Compiling libraries/AP_ROMFS/AP_ROMFS.cpp
+[229/237] Compiling libraries/AP_CheckFirmware/AP_CheckFirmware.cpp
+[230/237] Compiling libraries/AP_CheckFirmware/monocypher.cpp
+[231/237] Compiling libraries/AP_CheckFirmware/AP_CheckFirmware_secure_command.cpp
+[233/237] Linking build/OPENFCF405/bootloader/AP_Bootloader
+/Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: bootloader/AP_Bootloader has a LOAD segment with RWX permissions
+
+[234/237] Generating bin/AP_Bootloader.bin
+[235/237] checking symbols build/OPENFCF405/bootloader/AP_Bootloader
+[236/237] apj_gen build/OPENFCF405/bin/AP_Bootloader.bin
+[237/237] bin cleanup build/OPENFCF405/bin/AP_Bootloader.bin
+Waf: Leaving directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+
+BUILD SUMMARY
+Build directory: /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405
+Target                    Text (B)  Data (B)  BSS (B)  Total Flash Used (B)  Free Flash (B)  External Flash Used (B)
+--------------------------------------------------------------------------------------------------------------------
+bootloader/AP_Bootloader     14012        64   131012                 14076           18688  Not Applicable         
+'bootloader' finished successfully (3.203s)
+--- Step 2/2: ArduCopter (OPENFCF405) ---
+Setting top to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot 
+Setting out to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot/build 
+Autoconfiguration                        : enabled 
+Checking for program 'python'            : /Users/allah-computer/Research/open-fc/.venv/bin/python3 
+Checking for python version >= 3.6.9     : 3.14.6 
+Setting board to                         : OPENFCF405 
+Using toolchain                          : arm-none-eabi 
+Checking for 'g++' (C++ compiler)        : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-g++ 
+Checking for 'gcc' (C compiler)          : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc 
+Checking for program 'arm-none-eabi-nm'  : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-nm 
+Checking for c flags '-MMD'              : yes 
+Checking for cxx flags '-MMD'            : yes 
+CXX Compiler                             : g++ 12.3.1 
+Checking for program 'make'              : /var/folders/by/4fxym4x96_x1k0491t_ztch40000gp/T/tmp.7Jf13QRakr/make 
+Checking for program 'arm-none-eabi-objcopy' : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objcopy 
+Adding environment OPTIMIZE -Os
+Including /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/include/minimize_features.inc
+Including /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/include/minimize_common.inc
+Removing HAL_MSP_GPS_ENABLED
+Removing AP_AIRSPEED_MS4525_ENABLED
+Removing AP_AIRSPEED_ASP5033_ENABLED
+Removing AP_AIRSPEED_ANALOG_ENABLED
+Removing AP_AIRSPEED_MS5525_ENABLED
+Removing AP_AIRSPEED_SDP3X_ENABLED
+Removing AP_AIRSPEED_NMEA_ENABLED
+Setup for MCU STM32F405xx
+Default parameters path from hwdef: /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/OPENFCF405/defaults.parm
+Writing hwdef setup in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h
+Writing DMA map
+Setting up as normal
+Generating ldscript.ld
+Checking for env.py
+env set OPTIMIZE=-Os
+env set ENABLE_DFU_BOOT=0
+env set PROCESS_STACK=0x1C00
+env set MAIN_STACK=0x600
+env set IOMCU_FW=0
+env set PERIPH_FW=0
+env set BOARD_FLASH_SIZE=1024
+env set EXT_FLASH_SIZE_MB=0
+env set INT_FLASH_PRIMARY=False
+env set ENABLE_CRASHDUMP=False
+env set CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard', '-DARM_MATH_CM4', '-u_printf_float']
+env set CORTEX=cortex-m4
+env set APJ_BOARD_ID=9405
+env set APJ_BOARD_TYPE=STM32F405xx
+env set USBID=0x1209/0x5741
+env set FLASH_RESERVE_START_KB=64
+env set EXT_FLASH_RESERVE_START_KB=0
+env set FLASH_TOTAL=983040
+env set HAS_EXTERNAL_FLASH_SECTIONS=0
+env set CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4 ENV_UDEFS=-DCHPRINTF_USE_FLOAT=1
+Enabling ChibiOS asserts                     : no 
+Disabling Watchdog                           : no 
+Enabling malloc guard                        : no 
+Enabling ChibiOS thread statistics           : no 
+Enabling -Werror                             : no 
+Checking for intelhex module:                : OK 
+Enabled OpenDroneID                          : no 
+Enabled firmware ID checking                 : no 
+GPS Debug Logging                            : no 
+Enabled custom controller                    : no 
+Checking for HAVE_CMATH_ISFINITE             : yes 
+Checking for HAVE_CMATH_ISINF                : yes 
+Checking for HAVE_CMATH_ISNAN                : yes 
+Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE : yes 
+Checking for NEED_CMATH_ISINF_STD_NAMESPACE    : yes 
+Checking for NEED_CMATH_ISNAN_STD_NAMESPACE    : yes 
+Checking for header endian.h                   : not found 
+Checking for header byteswap.h                 : not found 
+Checking for HAVE_MEMRCHR                      : no 
+Configured VSCode Intellisense:                : no 
+DC_DSDL compiler in                            : /Users/allah-computer/Research/open-fc/firmware/ardupilot/modules/DroneCAN/dronecan_dsdlc 
+Source is git repository                       : yes 
+Update submodules                              : no 
+Checking for program 'git'                     : /opt/homebrew/bin/git 
+Gtest                                          : STM32 boards currently don't support compiling gtest 
+Checking for program 'arm-none-eabi-size'      : /Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-size 
+Benchmarks                                     : disabled 
+Unit tests                                     : disabled 
+Scripting                                      : disabled 
+Scripting runtime checks                       : enabled 
+Debug build                                    : disabled 
+Coverage build                                 : disabled 
+Force 32-bit build                             : disabled 
+Checking for program 'rsync'                   : /usr/bin/rsync 
+Removing target_list file /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/target_list
+'configure' finished successfully (0.455s)
+Waf: Entering directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+Checking for env.py
+env added OPTIMIZE=-Os
+env added ENABLE_DFU_BOOT=0
+env added PROCESS_STACK=0x1C00
+env added MAIN_STACK=0x600
+env added IOMCU_FW=0
+env added PERIPH_FW=0
+env added BOARD_FLASH_SIZE=1024
+env added EXT_FLASH_SIZE_MB=0
+env added INT_FLASH_PRIMARY=False
+env added ENABLE_CRASHDUMP=False
+env appended CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard', '-DARM_MATH_CM4', '-u_printf_float']
+env added CORTEX=cortex-m4
+env added APJ_BOARD_ID=9405
+env added APJ_BOARD_TYPE=STM32F405xx
+env added USBID=0x1209/0x5741
+env added FLASH_RESERVE_START_KB=64
+env added EXT_FLASH_RESERVE_START_KB=0
+env added FLASH_TOTAL=983040
+env added HAS_EXTERNAL_FLASH_SECTIONS=0
+env added CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4 ENV_UDEFS=-DCHPRINTF_USE_FLOAT=1
+Embedding file bootloader.bin:/Users/allah-computer/Research/open-fc/firmware/ardupilot/Tools/bootloaders/OPENFCF405_bl.bin
+Embedding file defaults.parm:/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/processed_defaults.parm
+Embedding file hwdef.dat:/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hw.dat
+[1/8] Creating build/OPENFCF405/hwdef.h
+[2/8] Creating build/OPENFCF405/modules/ChibiOS/include_dirs
+[6/8] Creating build/OPENFCF405/chibios_flags.h
+Adding environment OPTIMIZE -Os
+Including /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/include/minimize_features.inc
+Including /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/include/minimize_common.inc
+Removing HAL_MSP_GPS_ENABLED
+Removing AP_AIRSPEED_MS4525_ENABLED
+Removing AP_AIRSPEED_ASP5033_ENABLED
+Removing AP_AIRSPEED_ANALOG_ENABLED
+Removing AP_AIRSPEED_MS5525_ENABLED
+Removing AP_AIRSPEED_SDP3X_ENABLED
+Removing AP_AIRSPEED_NMEA_ENABLED
+Setup for MCU STM32F405xx
+Default parameters path from hwdef: /Users/allah-computer/Research/open-fc/firmware/ardupilot/libraries/AP_HAL_ChibiOS/hwdef/OPENFCF405/defaults.parm
+Writing hwdef setup in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h
+Writing DMA map
+Setting up as normal
+No change in hwdef.h
+Generating ldscript.ld
+
+[8/8] Linking build/OPENFCF405/modules/ChibiOS/libch.a
+ChibiOS (chibios_make.py): compiling 107 files with 12 workers...
+ChibiOS: Done (modules/ChibiOS/libch.a, 107 objects)
+
+No target_list file found, creating
+Generating compile_commands.json
+Build commands will be stored in build/OPENFCF405/compile_commands.json
+Generating compile_commands.json
+Build commands will be stored in build/OPENFCF405/compile_commands.json
+[ 141/1011] Compiling libraries/AP_CheckFirmware/monocypher.cpp
+[ 142/1011] Compiling libraries/AP_CheckFirmware/AP_CheckFirmware_secure_command.cpp
+[ 143/1011] Compiling libraries/AP_CheckFirmware/AP_CheckFirmware.cpp
+[ 144/1011] Compiling libraries/AP_Common/time.cpp
+[ 145/1011] Compiling libraries/AP_Common/sorting.cpp
+[ 146/1011] Compiling libraries/AP_Common/float16.cpp
+[ 147/1011] Compiling libraries/AP_Common/c++.cpp
+[ 148/1011] Compiling libraries/AP_Common/Location.cpp
+[ 149/1011] Compiling libraries/AP_Common/AP_FWVersion.cpp
+[ 150/1011] Compiling libraries/AP_Common/ExpandingString.cpp
+[ 151/1011] Compiling libraries/AP_Common/AP_ExpandingArray.cpp
+[ 152/1011] Compiling libraries/AP_Common/NMEA.cpp
+[ 246/1011] Compiling libraries/AP_Common/AP_Common.cpp
+[ 311/1011] Compiling libraries/AP_Math/vector3.cpp
+[ 331/1011] Compiling libraries/AP_Math/vector2.cpp
+[ 368/1011] Compiling libraries/AP_Math/quaternion.cpp
+[ 369/1011] Compiling libraries/AP_Math/matrixN.cpp
+[ 370/1011] Compiling libraries/AP_Math/chirp.cpp
+[ 371/1011] Compiling libraries/AP_Math/AP_Math.cpp
+[ 372/1011] Compiling libraries/AP_Math/AP_GeodesicGrid.cpp
+[ 373/1011] Compiling libraries/AP_Math/matrix_alg.cpp
+[ 374/1011] Compiling libraries/AP_Math/SplineCurve.cpp
+[ 375/1011] Compiling libraries/AP_Math/control.cpp
+[ 376/1011] Compiling libraries/AP_Math/spline5.cpp
+[ 377/1011] Compiling libraries/AP_Math/polyfit.cpp
+[ 378/1011] Compiling libraries/AP_Math/crc.cpp
+[ 379/1011] Compiling libraries/AP_Math/location.cpp
+[ 380/1011] Compiling libraries/AP_Math/polygon.cpp
+[ 381/1011] Compiling libraries/AP_Math/location_double.cpp
+[ 382/1011] Compiling libraries/AP_Math/matrix3.cpp
+[ 383/1011] Compiling libraries/AP_Networking/lwip_hal/arch/evtimer.c
+[ 384/1011] Compiling modules/lwip/src/netif/ppp/fsm.c
+[ 385/1011] Compiling modules/lwip/src/api/tcpip.c
+[ 386/1011] Compiling modules/lwip/src/api/netbuf.c
+[ 387/1011] Compiling modules/lwip/src/api/api_lib.c
+[ 388/1011] Compiling modules/lwip/src/core/ipv4/icmp.c
+[ 389/1011] Compiling modules/lwip/src/core/ipv4/etharp.c
+[ 390/1011] Compiling modules/lwip/src/core/ipv4/dhcp.c
+[ 391/1011] Compiling modules/lwip/src/core/ipv4/autoip.c
+[ 392/1011] Compiling modules/lwip/src/core/ipv4/acd.c
+[ 393/1011] Compiling modules/lwip/src/core/udp.c
+[ 394/1011] Compiling modules/lwip/src/core/ipv4/igmp.c
+[ 395/1011] Compiling modules/lwip/src/core/timeouts.c
+[ 396/1011] Compiling modules/lwip/src/core/ipv4/ip4.c
+[ 397/1011] Compiling modules/lwip/src/core/tcp_in.c
+[ 398/1011] Compiling modules/lwip/src/core/sys.c
+[ 399/1011] Compiling modules/lwip/src/core/stats.c
+[ 400/1011] Compiling modules/lwip/src/core/tcp.c
+[ 401/1011] Compiling modules/lwip/src/core/raw.c
+[ 402/1011] Compiling modules/lwip/src/core/pbuf.c
+[ 403/1011] Compiling modules/lwip/src/core/memp.c
+[ 404/1011] Compiling modules/lwip/src/core/mem.c
+[ 405/1011] Compiling modules/lwip/src/core/netif.c
+[ 406/1011] Compiling modules/lwip/src/core/init.c
+[ 407/1011] Compiling modules/lwip/src/core/inet_chksum.c
+[ 408/1011] Compiling modules/lwip/src/core/dns.c
+[ 409/1011] Compiling modules/lwip/src/core/def.c
+[ 410/1011] Compiling modules/lwip/src/core/altcp_tcp.c
+[ 411/1011] Compiling modules/lwip/src/core/ip.c
+[ 412/1011] Compiling modules/lwip/src/core/tcp_out.c
+[ 413/1011] Compiling libraries/AP_Networking/AP_Networking_tests.cpp
+[ 414/1011] Compiling modules/lwip/src/core/altcp.c
+[ 415/1011] Compiling libraries/AP_Networking/AP_Networking_macaddr.cpp
+[ 428/1011] Compiling libraries/AP_Networking/AP_Networking_address.cpp
+[ 513/1011] Compiling libraries/AP_Networking/AP_Networking_port.cpp
+[ 556/1011] Compiling libraries/AP_Networking/AP_Networking_PPP.cpp
+[ 557/1011] Compiling libraries/AP_Networking/AP_Networking_CAN.cpp
+[ 570/1011] Compiling libraries/AP_Networking/AP_Networking_ChibiOS.cpp
+[ 591/1011] Compiling libraries/AP_Networking/AP_Networking.cpp
+[ 648/1011] Compiling modules/lwip/src/core/altcp_alloc.c
+[ 653/1011] Compiling modules/lwip/src/netif/ethernet.c
+[ 654/1011] Compiling modules/lwip/src/netif/ppp/ipcp.c
+[ 662/1011] Compiling modules/lwip/src/netif/lowpan6.c
+[ 663/1011] Compiling modules/lwip/src/netif/lowpan6_ble.c
+[ 664/1011] Compiling modules/lwip/src/api/if_api.c
+[ 665/1011] Compiling modules/lwip/src/netif/slipif.c
+[ 666/1011] Compiling modules/lwip/src/netif/zepif.c
+[ 667/1011] Compiling modules/lwip/src/netif/ppp/vj.c
+[ 668/1011] Compiling modules/lwip/src/netif/ppp/ipv6cp.c
+[ 669/1011] Compiling modules/lwip/src/netif/ppp/lcp.c
+[ 670/1011] Compiling modules/lwip/src/netif/ppp/magic.c
+[ 671/1011] Compiling modules/lwip/src/netif/bridgeif.c
+[ 672/1011] Compiling modules/lwip/src/api/sockets.c
+[ 673/1011] Compiling modules/lwip/src/netif/ppp/mppe.c
+[ 674/1011] Compiling modules/lwip/src/netif/ppp/multilink.c
+[ 675/1011] Compiling modules/lwip/src/api/netifapi.c
+[ 676/1011] Compiling modules/lwip/src/netif/ppp/ppp.c
+[ 677/1011] Compiling modules/lwip/src/netif/ppp/pppapi.c
+[ 678/1011] Compiling modules/lwip/src/netif/bridgeif_fdb.c
+[ 679/1011] Compiling modules/lwip/src/api/netdb.c
+[ 680/1011] Compiling modules/lwip/src/api/api_msg.c
+[ 681/1011] Compiling modules/lwip/src/netif/ppp/pppcrypt.c
+[ 682/1011] Compiling modules/lwip/src/netif/ppp/pppoe.c
+[ 683/1011] Compiling modules/lwip/src/netif/lowpan6_common.c
+[ 692/1011] Compiling modules/lwip/src/netif/ppp/pppol2tp.c
+[ 693/1011] Compiling modules/lwip/src/netif/ppp/auth.c
+[ 694/1011] Compiling modules/lwip/src/netif/ppp/pppos.c
+[ 695/1011] Compiling modules/lwip/src/netif/ppp/ccp.c
+[ 696/1011] Compiling modules/lwip/src/api/err.c
+[ 697/1011] Compiling modules/lwip/src/core/ipv4/ip4_addr.c
+[ 698/1011] Compiling modules/lwip/src/netif/ppp/chap-md5.c
+[ 699/1011] Compiling modules/lwip/src/netif/ppp/upap.c
+[ 700/1011] Compiling modules/lwip/src/netif/ppp/chap-new.c
+[ 701/1011] Compiling modules/lwip/src/netif/ppp/chap_ms.c
+[ 702/1011] Compiling modules/lwip/src/netif/ppp/utils.c
+[ 703/1011] Compiling modules/lwip/src/netif/ppp/demand.c
+[ 704/1011] Compiling modules/lwip/src/core/ipv4/ip4_frag.c
+[ 705/1011] Compiling modules/lwip/src/netif/ppp/eap.c
+[ 706/1011] Compiling libraries/AP_Networking/lwip_hal/arch/sys_arch.cpp
+[ 707/1011] Compiling modules/lwip/src/netif/ppp/ecp.c
+[ 708/1011] Compiling modules/lwip/src/netif/ppp/eui64.c
+[ 709/1011] Compiling libraries/AP_ROMFS/AP_ROMFS.cpp
+[ 710/1011] Compiling libraries/AP_ROMFS/tinflate.cpp
+[ 711/1011] Compiling libraries/AP_HAL/utility/packetise.cpp
+[ 712/1011] Compiling libraries/AP_HAL/utility/RCOutput_Tap.cpp
+[ 713/1011] Compiling libraries/AP_HAL/utility/BetterStream.cpp
+[ 714/1011] Compiling libraries/AP_HAL/utility/Socket.cpp
+[ 715/1011] Compiling libraries/AP_HAL/utility/ftoa_engine.cpp
+[ 716/1011] Compiling libraries/AP_HAL/utility/RingBuffer.cpp
+[ 717/1011] Compiling libraries/AP_HAL/utility/Socket_native.cpp
+[ 718/1011] Compiling libraries/AP_HAL/Storage.cpp
+[ 719/1011] Compiling libraries/AP_HAL/system.cpp
+[ 720/1011] Compiling libraries/AP_HAL/Semaphores.cpp
+[ 721/1011] Compiling libraries/AP_HAL/utility/RCOutput_Tap_Linux.cpp
+[ 722/1011] Compiling libraries/AP_HAL/Device.cpp
+[ 723/1011] Compiling libraries/AP_HAL/Util.cpp
+[ 724/1011] Compiling libraries/AP_HAL/HAL.cpp
+[ 725/1011] Compiling libraries/AP_HAL/utility/utoa_invert.cpp
+[ 726/1011] Compiling libraries/AP_HAL/UARTDriver.cpp
+[ 727/1011] Compiling libraries/AP_HAL/utility/DataRateLimit.cpp
+[ 728/1011] Compiling libraries/AP_HAL/GPIO.cpp
+[ 729/1011] Compiling libraries/AP_HAL/utility/replace.cpp
+[ 730/1011] Compiling libraries/AP_HAL/Scheduler.cpp
+[ 731/1011] Compiling libraries/AP_HAL/utility/dsm.cpp
+[ 732/1011] Compiling libraries/AP_HAL/utility/sumd.cpp
+[ 733/1011] Compiling libraries/AP_HAL/utility/getopt_cpp.cpp
+[ 734/1011] Compiling libraries/AP_HAL/utility/st24.cpp
+[ 735/1011] Compiling libraries/AP_HAL/RCOutput.cpp
+[ 736/1011] Compiling libraries/AP_HAL/utility/srxl.cpp
+[ 737/1011] Compiling libraries/AP_HAL/CANIface.cpp
+[ 738/1011] Compiling libraries/AP_HAL/utility/print_vprintf.cpp
+[ 739/1011] Compiling libraries/AP_HAL/DSP.cpp
+[ 740/1011] Compiling libraries/AP_HAL_ChibiOS/Scheduler.cpp
+[ 741/1011] Compiling libraries/AP_HAL_ChibiOS/Semaphores.cpp
+[ 742/1011] Compiling libraries/AP_HAL_ChibiOS/DSP.cpp
+[ 743/1011] Compiling libraries/AP_HAL_ChibiOS/CANFDIface.cpp
+[ 744/1011] Compiling libraries/AP_HAL_ChibiOS/RCOutput_bdshot.cpp
+[ 745/1011] Compiling libraries/AP_HAL_ChibiOS/Device.cpp
+[ 746/1011] Compiling libraries/AP_HAL_ChibiOS/RCOutput.cpp
+[ 747/1011] Compiling libraries/AP_HAL_ChibiOS/I2CDevice.cpp
+[ 748/1011] Compiling libraries/AP_HAL_ChibiOS/RCOutput_iofirmware.cpp
+[ 749/1011] Compiling libraries/AP_HAL_ChibiOS/SPIDevice.cpp
+[ 750/1011] Compiling libraries/AP_HAL_ChibiOS/SoftSigReader.cpp
+[ 751/1011] Compiling libraries/AP_HAL_ChibiOS/WSPIDevice.cpp
+[ 752/1011] Compiling libraries/AP_HAL_ChibiOS/RCInput.cpp
+[ 864/1011] Compiling libraries/AP_HAL_ChibiOS/UARTDriver.cpp
+[ 957/1011] Compiling libraries/AP_HAL_ChibiOS/stdio.cpp
+[ 958/1011] Compiling libraries/AP_HAL_ChibiOS/shared_dma.cpp
+[ 959/1011] Compiling libraries/AP_HAL_ChibiOS/AnalogIn.cpp
+[ 960/1011] Compiling libraries/AP_HAL_ChibiOS/SoftSigReaderInt.cpp
+[ 961/1011] Compiling libraries/AP_HAL_ChibiOS/RCOutput_serial.cpp
+[ 962/1011] Compiling libraries/AP_HAL_ChibiOS/CanIface.cpp
+[ 963/1011] Compiling libraries/AP_HAL_ChibiOS/Util.cpp
+[ 964/1011] Compiling libraries/AP_HAL_ChibiOS/sdcard.cpp
+[ 965/1011] Compiling libraries/AP_Scripting/AP_Scripting.cpp
+[ 966/1011] Compiling libraries/AP_Scripting/AP_Scripting_SerialAccess.cpp
+[ 967/1011] Compiling libraries/AP_Scripting/AP_Scripting_CANSensor.cpp
+[ 968/1011] Compiling libraries/AP_Scripting/AP_Scripting_SerialDevice.cpp
+[ 969/1011] Compiling libraries/AP_Scripting/lua/src/lua.c
+[ 970/1011] Compiling libraries/AP_Scripting/lua/src/lmem.c
+[ 971/1011] Compiling libraries/AP_Scripting/lua/src/linit.c
+[ 972/1011] Compiling libraries/AP_Scripting/lua/src/lauxlib.c
+[ 973/1011] Compiling libraries/AP_Scripting/lua/src/lstate.c
+[ 974/1011] Compiling libraries/AP_Scripting/lua/src/ltablib.c
+[ 975/1011] Compiling libraries/AP_Scripting/lua/src/ldblib.c
+[ 976/1011] Compiling libraries/AP_Scripting/lua/src/lundump.c
+[ 977/1011] Compiling libraries/AP_Scripting/lua/src/lgc.c
+[ 978/1011] Compiling libraries/AP_Scripting/lua/src/ldo.c
+[ 979/1011] Compiling libraries/AP_Scripting/lua/src/loslib.c
+[ 980/1011] Compiling libraries/AP_Scripting/lua/src/lopcodes.c
+[ 981/1011] Compiling libraries/AP_Scripting/lua/src/lvm.c
+[ 982/1011] Compiling libraries/AP_Scripting/lua/src/lobject.c
+[ 983/1011] Compiling libraries/AP_Scripting/lua/src/ldump.c
+[ 984/1011] Compiling libraries/AP_Scripting/lua/src/liolib.c
+[ 985/1011] Compiling libraries/AP_Scripting/lua/src/ltm.c
+[ 986/1011] Compiling libraries/AP_Scripting/lua/src/lctype.c
+[ 987/1011] Compiling libraries/AP_Scripting/lua/src/lbitlib.c
+[ 988/1011] Compiling libraries/AP_Scripting/lua/src/lparser.c
+[ 989/1011] Compiling libraries/AP_Scripting/lua/src/loadlib.c
+[ 990/1011] Compiling libraries/AP_Scripting/lua/src/luac.c
+[ 991/1011] Compiling libraries/AP_Scripting/lua/src/llex.c
+[ 992/1011] Compiling libraries/AP_Scripting/lua/src/lstrlib.c
+[ 993/1011] Compiling libraries/AP_Scripting/lua/src/lfunc.c
+[ 994/1011] Compiling libraries/AP_Scripting/lua/src/lcode.c
+[ 995/1011] Compiling libraries/AP_Scripting/lua/src/lmathlib.c
+[ 996/1011] Compiling libraries/AP_Scripting/lua/src/ldebug.c
+[ 997/1011] Compiling libraries/AP_Scripting/lua/src/lapi.c
+[ 998/1011] Compiling libraries/AP_Scripting/lua/src/lcorolib.c
+[ 999/1011] Compiling libraries/AP_Scripting/lua/src/lstring.c
+[1000/1011] Compiling libraries/AP_Scripting/lua/src/lzio.c
+[1001/1011] Compiling libraries/AP_Scripting/lua/src/ltable.c
+[1002/1011] Compiling libraries/AP_Scripting/lua/src/lbaselib.c
+[1003/1011] Compiling libraries/AP_Scripting/lua/src/lutf8lib.c
+[1005/1011] Linking build/OPENFCF405/bin/arducopter
+/Users/allah-computer/Research/open-fc/.toolchain/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: bin/arducopter has a LOAD segment with RWX permissions
+
+[1006/1011] Generating bin/arducopter.bin
+[1007/1011] checking symbols build/OPENFCF405/bin/arducopter
+[1008/1011] app_descriptor set_app_descriptor: build/OPENFCF405/bin/arducopter build/OPENFCF405/bin/arducopter.bin
+No APP_DESCRIPTOR found
+[1009/1011] apj_gen build/OPENFCF405/bin/arducopter.bin
+[1010/1011] bin cleanup build/OPENFCF405/bin/arducopter.bin
+[1011/1011] Generating bin/arducopter_with_bl.hex
+Waf: Leaving directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+
+BUILD SUMMARY
+Build directory: /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405
+Target          Text (B)  Data (B)  BSS (B)  Total Flash Used (B)  Free Flash (B)  External Flash Used (B)
+----------------------------------------------------------------------------------------------------------
+bin/arducopter    734853       956   130208                735809          247224  Not Applicable         
+'copter' finished successfully (6.765s)
+Bootloader Flash usage: 14080 / 32768 bytes (headroom: 18688 bytes)
+   text	   data	    bss	    dec	    hex	filename
+  14012	     64	 149700	 163776	  27fc0	/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/bootloader/AP_Bootloader
+Flash usage: 735816 / 983040 bytes (headroom: 247224 bytes)
+   text	   data	    bss	    dec	    hex	filename
+ 734853	    956	 377432	1113241	 10fc99	/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/bin/arducopter
+ChibiOS DMA map (/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h):
+  DMA1 Stream 2: UART_UART4_RX(ch=4)
+  DMA1 Stream 3: I2C_I2C2_RX(ch=7)
+  DMA1 Stream 5: UART_USART2_RX(ch=4)
+  DMA1 Stream 6: TIM_TIM4_UP(ch=2)
+  DMA1 Stream 7: I2C_I2C2_TX(ch=7)
+  DMA2 Stream 0: ADC_ADC1(ch=0)
+  DMA2 Stream 1: UART_USART6_RX(ch=5)
+  DMA2 Stream 2: SPI_SPI1_RX(ch=3)
+  DMA2 Stream 3: SPI_SPI1_TX(ch=3)
+  DMA2 Stream 5: UART_USART1_RX(ch=4)
+  DMA2 Stream 6: UART_USART6_TX(ch=5)
+  DMA2 Stream 7: UART_USART1_TX(ch=4)
+SHARED_DMA_MASK = 0
+INFO: TIM4 DMA allocated: [(1, 6, 'TIM_TIM4_UP')]
+  Supports PWM, OneShot125, and unidirectional DShot150/300/600 via TIM4_UP DMAR.
+  Bi-Directional DShot (BIDIR) remains unsupported on PB9 (TIM4_CH4 has no compare DMA).
+PASS: Zero DMA conflicts detected (SHARED_DMA_MASK = 0; TIM4/SPI1 dedicated).
+PASS: ROMFS embeds defaults.parm (2196 B) and bootloader.bin (14080 B).
+Checking mandatory safety & Rev K sensor symbols in ELF...
+PASS: all 11 mandatory safety/sensor/PrecLand/DMAR symbols verified in ELF.
+PASS: BN-880 compass backends (HMC5843/QMC5883L/QMC5883P) and ROMFS defaults loader verified in ELF.
+PASS: OPENFCF405 built within 1 MB Flash ceiling (submodule clean).

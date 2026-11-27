@@ -1,0 +1,109 @@
+--- Step 1/2: Bootloader (OPENFCF405) ---
+Setting top to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot 
+Setting out to                           : /Users/allah-computer/Research/open-fc/firmware/ardupilot/build 
+Autoconfiguration                        : enabled 
+Checking for program 'python'            : /Users/allah-computer/Research/open-fc/.venv/bin/python3 
+Checking for python version >= 3.6.9     : 3.14.6 
+Setting board to                         : OPENFCF405 
+Using toolchain                          : arm-none-eabi 
+Checking for 'g++' (C++ compiler)        : /opt/homebrew/bin/arm-none-eabi-g++ 
+Checking for 'gcc' (C compiler)          : /opt/homebrew/bin/arm-none-eabi-gcc 
+Checking for program 'arm-none-eabi-nm'  : /opt/homebrew/bin/arm-none-eabi-nm 
+Checking for c flags '-MMD'              : yes 
+Checking for cxx flags '-MMD'            : yes 
+CXX Compiler                             : g++ 16.2.0 
+Checking for program 'make'              : /var/folders/by/4fxym4x96_x1k0491t_ztch40000gp/T/tmp.wBE19rQwtt/make 
+Checking for program 'arm-none-eabi-objcopy' : /opt/homebrew/bin/arm-none-eabi-objcopy 
+Setup for MCU STM32F405xx
+Writing hwdef setup in /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hwdef.h
+Writing DMA map
+Setting up as bootloader
+Generating ldscript.ld
+Checking for env.py
+env set ENABLE_DFU_BOOT=0
+env set PROCESS_STACK=0x1C00
+env set MAIN_STACK=0x600
+env set IOMCU_FW=0
+env set PERIPH_FW=0
+env set BOARD_FLASH_SIZE=1024
+env set EXT_FLASH_SIZE_MB=0
+env set INT_FLASH_PRIMARY=False
+env set ENABLE_CRASHDUMP=False
+env set CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard']
+env set CORTEX=cortex-m4
+env set APJ_BOARD_ID=9405
+env set APJ_BOARD_TYPE=STM32F405xx
+env set USBID=0x1209/0x5741
+env set FLASH_RESERVE_START_KB=0
+env set EXT_FLASH_RESERVE_START_KB=0
+env set FLASH_TOTAL=32768
+env set HAS_EXTERNAL_FLASH_SECTIONS=0
+env set CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4
+Enabling ChibiOS asserts                     : no 
+Disabling Watchdog                           : no 
+Enabling malloc guard                        : no 
+Enabling ChibiOS thread statistics           : no 
+Enabling -Werror                             : no 
+Checking for intelhex module:                : OK 
+Enabled OpenDroneID                          : no 
+Enabled firmware ID checking                 : no 
+GPS Debug Logging                            : no 
+Enabled custom controller                    : no 
+Checking for HAVE_CMATH_ISFINITE             : no 
+Checking for HAVE_CMATH_ISINF                : no 
+Checking for HAVE_CMATH_ISNAN                : no 
+Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE : no 
+Checking for NEED_CMATH_ISINF_STD_NAMESPACE    : no 
+Checking for NEED_CMATH_ISNAN_STD_NAMESPACE    : no 
+Checking for header endian.h                   : not found 
+Checking for header byteswap.h                 : not found 
+Checking for HAVE_MEMRCHR                      : no 
+Configured VSCode Intellisense:                : no 
+DC_DSDL compiler in                            : /Users/allah-computer/Research/open-fc/firmware/ardupilot/modules/DroneCAN/dronecan_dsdlc 
+Source is git repository                       : yes 
+Update submodules                              : no 
+Checking for program 'git'                     : /opt/homebrew/bin/git 
+Gtest                                          : STM32 boards currently don't support compiling gtest 
+Checking for program 'arm-none-eabi-size'      : /opt/homebrew/bin/arm-none-eabi-size 
+Benchmarks                                     : disabled 
+Unit tests                                     : disabled 
+Scripting                                      : disabled 
+Scripting runtime checks                       : enabled 
+Debug build                                    : disabled 
+Coverage build                                 : disabled 
+Force 32-bit build                             : disabled 
+Checking for program 'rsync'                   : /usr/bin/rsync 
+Removing target_list file /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/target_list
+'configure' finished successfully (0.341s)
+Waf: Entering directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+Checking for env.py
+env added ENABLE_DFU_BOOT=0
+env added PROCESS_STACK=0x1C00
+env added MAIN_STACK=0x600
+env added IOMCU_FW=0
+env added PERIPH_FW=0
+env added BOARD_FLASH_SIZE=1024
+env added EXT_FLASH_SIZE_MB=0
+env added INT_FLASH_PRIMARY=False
+env added ENABLE_CRASHDUMP=False
+env appended CPU_FLAGS=['-mcpu=cortex-m4', '-mfpu=fpv4-sp-d16', '-mfloat-abi=hard']
+env added CORTEX=cortex-m4
+env added APJ_BOARD_ID=9405
+env added APJ_BOARD_TYPE=STM32F405xx
+env added USBID=0x1209/0x5741
+env added FLASH_RESERVE_START_KB=0
+env added EXT_FLASH_RESERVE_START_KB=0
+env added FLASH_TOTAL=32768
+env added HAS_EXTERNAL_FLASH_SECTIONS=0
+env added CHIBIOS_BUILD_FLAGS=USE_FATFS=no CHIBIOS_STARTUP_MK=os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk CHIBIOS_PLATFORM_MK=os/hal/ports/STM32/STM32F4xx/platform.mk MCU=cortex-m4
+Embedding file hwdef.dat:/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/hw.dat
+[2/7] Creating build/OPENFCF405/modules/ChibiOS/include_dirs
+[4/7] Compiling libraries/AP_Scripting/generator/src/main.c
+[5/7] Creating build/OPENFCF405/chibios_flags.h
+You have not agreed to the Xcode license agreements. Please run 'sudo xcodebuild -license' from within a Terminal window to review and agree to the Xcode and Apple SDKs license.
+
+Waf: Leaving directory `/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405'
+Build failed
+ -> task in '/Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/gen-bindings' failed (exit status 69): 
+	{task 4472617296: /Users/allah-computer/Research/open-fc/firmware/ardupilot/build/OPENFCF405/gen-bindings main.c -> gen-bindings}
+ (run with -v to display more information)

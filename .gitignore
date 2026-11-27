@@ -1,0 +1,50 @@
+# KiCad temporary, cache, and auto-backup files
+*-backups/
+fp-info-cache
+sym-lib-table.bak
+fp-lib-table.bak
+*.kicad_prl
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.lck
+*.bak
+*.bck
+*.000
+_autosave-*
+
+# Build outputs (ArduPilot, ESP-IDF, CMake, generic)
+build/
+firmware/ardupilot/build/
+firmware/esp32-wifi/build/
+firmware/esp32-cam/build/
+firmware/esp32-wifi/managed_components/
+firmware/esp32-cam/managed_components/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.apj
+*.map
+
+# Secrets, credentials, and local ESP-IDF configs (keep sdkconfig.defaults tracked)
+.env
+.env.*
+*.local
+sdkconfig
+sdkconfig.old
+secrets/
+*.pem
+*.key
+
+# Python / tooling / OS
+__pycache__/
+*.py[cod]
+.venv/
+.toolchain/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+*.swp
+*~
